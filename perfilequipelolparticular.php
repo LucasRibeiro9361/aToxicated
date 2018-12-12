@@ -159,4 +159,7 @@ WHERE id_Topo=$id or id_Selva=$id or id_meio=$id or id_atirador=$id or id_suport
       </div>
     </div>
   </body>
+  <br><footer>
+  	<?php include 'footer.php';?>
+  </footer>
 </html>

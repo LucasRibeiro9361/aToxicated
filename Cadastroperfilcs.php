@@ -165,4 +165,7 @@ if(isset($_POST['objetivo'])){
     ?>
     </form>
   </body>
+	<br><footer>
+		<?php include 'footer.php';?>
+	</footer>
 </html>

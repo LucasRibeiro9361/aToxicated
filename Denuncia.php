@@ -106,4 +106,7 @@ ini_set(“display_errors”, 0 );
       }
     ?>
   </body>
+  <br><footer>
+  	<?php include 'footer.php';?>
+  </footer>
 </html>

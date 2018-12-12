@@ -169,4 +169,7 @@ if(isset($_POST['usuario'])){
       echo "Erro: " . $conn->error;
     }  }  ?>
   </body>
+  <br><footer>
+  	<?php include 'footer.php';?>
+  </footer>
 </html>

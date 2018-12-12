@@ -36,6 +36,7 @@ else{
 	</div>
 </form>
 </body>
-<footer>
+<br><footer>
+	<?php include 'footer.php';?>
 </footer>
 </html>

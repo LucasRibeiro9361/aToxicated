@@ -102,4 +102,7 @@ $result = $conn->query($sql);
   }
     ?>
   </body>
+  <br><footer>
+  	<?php include 'footer.php';?>
+  </footer>
 </html>

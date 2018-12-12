@@ -163,11 +163,11 @@
 													</div>';
 					} else {echo '<div class="boxc">
 						<center>
-						<div class="box_iconc d-flex flex-column align-items-center justify-content-center"><img src="images/ak-47-icon.png" alt=""></div>
 					</center>
-						<div class="box_title">League of Legends</div>
+						<div style="font-size:200%;" class="box_title">League of Legends</div>
 						<div class="box_text">
 							<p>League of Legends é um jogo online competitivo que mistura a velocidade e a intensidade de um RTS com elementos de RPG.</p>
+							<br><p>Você ainda não tem cadastro! <br>Cadastre-se</p>
 						</div>
 						<div class="box_link_container">
 						<div class="button home_button ml-auto mr-auto"><a href="cadastroperfillol.php">Criar perfil</a></div>

@@ -264,10 +264,11 @@ if ($result->num_rows > 0) {
       </div>
       <div class="col-xl-12">
           <div class="row">
-              <div class="col-xl-3 row3perfillol winrate"><center>Winrate<br><img src="img/winrate.png"></center></div>
-              <div class="col-xl-3 row3perfillol partida"><center>Partidas<br><img src="img/partida.png"></center></div>
-              <div class="col-xl-3 row3perfillol"><center>Vitoria</center></div>
-              <div class="col-xl-3 row3perfillol"><center>Derrota</center></div>
+            <div class="col-xl-3 row3perfillol partida"><center>Partidas<br><?php $total = $_SESSION['wins']+
+$_SESSION['losses']; echo $total;?><img src="img/partida.png"></center></div>
+            <div class="col-xl-3 row3perfillol winrate"><center>Winrate<br><?php $winrate = $_SESSION['wins']/$total; echo substr ($winrate, 2, 2)."%";?><img src="img/winrate.png"></center></div>
+            <div class="col-xl-3 row3perfillol"><center>Vitorias</center><?php echo $_SESSION['wins'];?></div>
+            <div class="col-xl-3 row3perfillol"><center>Derrotas</center><?php echo $_SESSION['losses'];?></div>
           </div>
       </div>
       <div class="col-xl-12 ">
@@ -304,5 +305,8 @@ if ($result->num_rows > 0) {
 }
 ?>
 </body>
+<br><footer>
+	<?php include 'footer.php';?>
+</footer>
 </html>
 <?php }else{ header('Location: playerhome.php');}?>
