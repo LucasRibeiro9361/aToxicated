@@ -36,7 +36,7 @@
 			<div class="row">
 				<div class="col">
 					<div class="header_content d-flex flex-row align-items-center justify-content-start trans_400">
-						<nav style="margin-right:-5%;" class="main_nav">
+						<nav style="margin-right:-5%;position:static;" class="main_nav">
 							<ul class="d-flex flex-row align-items-center justify-content-start">
 								<li class="active"><a href="index.html">Home</a></li>
 								<li><a href="faleconosco.php">FAQ</a></li>
@@ -79,7 +79,7 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="background_image" style="background-image:url(images/index.jpg)"></div>
+		<div class="background_image" style=" margin-top:80px;background-image:url(images/bg1.jpg)"></div>
 		<div class="overlay"></div>
 		<div class="home_container">
 			<div class="container">

@@ -123,7 +123,7 @@ else{
       <td><b>genero</b></td>
       <td><b>
         <label>
-  			<input class="with-gap" required="" checked="<?php if($genero == 2){echo "checked";} ?>" name="genero" value="1" type="radio"/>
+  			<input class="with-gap" required="" checked="<?php if($genero == 2){echo "checked";} ?>" name="genero" value="Masculino" type="radio"/>
   			<span>Masculino</span>
   		</label>
   				</div>
@@ -131,7 +131,7 @@ else{
   			<div class="row">
   				<div class="col-md-12">
   			<label>
-  			<input class="with-gap" required="" name="genero" value="2" type="radio"/>
+  			<input class="with-gap" required="" name="genero" value="Feminino" type="radio"/>
   			<span>Feminino</span>
   		</label>
   				</div>
