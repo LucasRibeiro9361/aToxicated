@@ -1,19 +1,67 @@
+<?php
+include 'config.php';
+include 'connect.php';
+include 'selectdedadosperfilparticular.php';
+include 'conviteperfil.php';
+if(isset($_SESSION["cdusuario"])){
+  include 'menulogado.php';
+}
+else{
+  header('Location: login.php');
+}
+error_reporting(0);
+ini_set(“display_errors”, 0 );
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="perfillolparticular.css">
+    <link rel="stylesheet" type="text/css" href="perfilusuario.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
+    <br>
+    <br>
+    <center>
+      <div class="container-fluid" id="cont1">
+        <div class="row">
+          <div class="col-lg-6">
     <form method="POST">
       <input type="text" name="nick" placeholder="Digite o nick do denunciado"><br>
+    </div>
+  </div>
+  <br>
+    <div class="row">
+      <div class="col-lg-6">
       <select name="jogo">
         <option value="1">LOL</option>
       </select><br>
+    </div></div>
+      <br>
+    <div class="row">
+      <div class="col-lg-6">
       <textarea name="motivo" rows="2" cols="25"></textarea><br>
+    </div>
+  </div>
+    <br>
+  <div class="row">
+    <div class="col-lg-6">
       <textarea name="complemento" rows="5" cols="40"></textarea><br>
+    </div>
+  </div>
+    <br>
+  <div class="row">
+    <div class="col-lg-6">
       <input type="submit" name="botao" value="ENVIAR">
+    </div>
+  </div>
     </form>
+  </center>
     <?php
       include 'config.php';
       include 'connect.php';
