@@ -1,7 +1,6 @@
 <?php
   include 'connect.php';
   include 'config.php';
-  include 'codigo.php'
   if (isset($_POST['sair'])) {
     $cdequipe=$_SESSION['cdequipe'];
     $id=$_SESSION['id'];

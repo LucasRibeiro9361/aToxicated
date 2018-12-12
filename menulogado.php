@@ -66,17 +66,21 @@ text-decoration:none !important;
     <?php
     include 'connect.php';
     $id=$_SESSION['cdusuario'];
-$sql = "SELECT * FROM tb_perfillol WHERE cd_perfillol='$id'";
+$sql = "SELECT * FROM tb_perfillol WHERE id_usuario=$id";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
   $cd1=$row['cd_perfillol'];
+  }
 }
 if(isset($cd1)){
 $sql = "SELECT * FROM tb_equipelol WHERE id_topo=$cd1 OR id_selva=$cd1 OR id_meio=$cd1 OR id_atirador=$cd1 OR id_suporte=$cd1 OR id_dono=$cd1";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
   echo "<a class='dropdown-item' href='perfilequipelolparticular.php'>Seu time</a>
   <div class='dropdown-divider'></div>";
+}
 }
 }
 ?>
