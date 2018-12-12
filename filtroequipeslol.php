@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="stylesheet" type="text/css" href="paginainicial.css">
+		<link rel="stylesheet" type="text/css" href="filtroequipeslol.css">
 		<link rel="stylesheet" href="css/bootstrap/bootstrap-grid.css">
   	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script src="js/bootstrap.min.js"></script>
@@ -26,13 +26,33 @@
       </head>
       <body>
         <form method='POST'>
-          Objetivo<select name="objetivo">
+          <div class ="container-fluid">
+    				<div class="row">
+    					<div class=" col-xl-2 containerfiltro">
+    						<div class="row">
+    							<div class="col-xl-12 titulo">
+    								Filtro Equipes
+    						</div>
+    					</div>
+      <center>
+      <div class="row">
+  			<div class="col-xl-12 rowfiltro">
+          Objetivo
+          <div class="div-select">
+            <select name="objetivo">
             <option value="0">Todos</option>
             <option value="lazer">Lazer</option>
             <option value="ranqueada">Ranqueada</option>
             <option value="campeonato">Campeonato</option>
-          </select><br>
-          Estado<select name="estado">
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-12 rowfiltro">
+          Estado
+          <div class="div-select">
+            <select name="estado">
             <option value="0">Todos</option>
             <option value="AC">AC</option>
             <option value="AL">AL</option>
@@ -61,8 +81,14 @@
             <option value="SP">SP</option>
             <option value="SE">SE</option>
             <option value="TO">TO</option>
-          </select><br>
+          </select>
+        </div>
+      </div>
+    </div><br>
+      <div class="row">
+     	  <div class="col-xl-12 rowfiltro">
           Lane Desocupada
+          <div class="div-select">
           <select name="lane1">
             <option value="0">Todos</option>
             <option value="1">Topo</option>
@@ -70,16 +96,25 @@
             <option value="3">Meio</option>
             <option value="4">Atirador</option>
             <option value="5">Suporte</option>
-          </select><br>
-          <input type="submit" value="ENVIAR">
+          </select>
+        </div>
+      </div>
+    </div><br>
+      </center>
+          <center>  <input class="botao botao1" type="submit" value="ENVIAR"></center>
         </form>
-    		<table style="width:100%">
-    			<tr>
+        </div>
+
+          <div class="col-xl-8 conteudofiltro">
+            <table style="width:100%">
+        		<table style="width:100%;margin-top:10px;">
+        		<tr class="trfirst">
     				<th>Nome</th>
     				<th>Objetivo</th>
     				<th>Estado</th>
     				<th>Elo minimo</th>
     				<th>Elo maximo</th>
+            <th>Perfil<th>
     			</tr>
           <?php
           if (isset($_POST['objetivo'])) {
@@ -132,13 +167,13 @@
           if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
     					echo "<form method='POST' action='codigo.php'>
-    	        <tr>
+    	        <tr class='trsecond'>
     	          <th>".$row['nome']."</th>
     	          <th>".$row['objetivo']."</th>
     	          <th>".$row['estado']."</th>
     	          <th>".$row['elo1']."</th>
     	          <th>".$row['elo2']."</th>";
-    	        echo "<th><input type='hidden' value='".$row['nome']."' name='nome'><input type='submit' name='botao' value='ir para perfil'></form></th></tr>";
+    	        echo "<th><input type='hidden' value='".$row['nome']."' name='nome'><input class='botao2 botao' type='submit' name='botao' value='Ir para perfil'></form></th></tr>";
     				}
     				} else {
               echo "0 results";
@@ -147,6 +182,9 @@
           ?>
     	    </form>
     			</table>
+        </div>
+      </div>
+    </div>
     			<p>
     				<h1>Pesquisar pelo Nick</h1>
     			<form method="post" action="codigo.php">

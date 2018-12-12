@@ -1,0 +1,152 @@
+.containerfiltro{
+  border:solid;
+  border-color:#555555;
+  background-color:whitesmoke;
+  height:850px;
+  margin-top:3%;
+  border-top-left-radius:20px;
+  border-bottom-left-radius:20px;
+  float:left;
+  margin-left:8%;
+  background-color:#2e2e2e;
+
+
+}
+body{
+  background-image:url("img/bg-masthead.jpg");
+
+}
+.titulo{
+  text-align: center;
+  font-family: montserrat;
+  color:whitesmoke;
+  font-size:35px;
+}
+.conteudofiltro{
+  margin:0 !important;
+  padding:0 !important;
+  border:solid;
+  border-color:#2e2e2e;
+  height: 850px;
+  margin-top:3% !important;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color:#dedede;
+}
+.rowfiltro{
+  font-size:25px;
+  height:auto;
+  color:white;
+
+}
+.trfirst th{
+    border-bottom: 2px  black solid !important;
+    margin:0;
+    font-family:montserrat;
+    font-size:25px;
+}
+.trfirst th:first-child{
+    padding-left:10px;
+}
+.trfirst th:last-child{
+    padding-left:60px;
+}
+.trsecond th{
+  border-bottom: 2px  black solid !important;
+  margin:0;
+  font-size:20px;
+}
+.trsecond th:first-child{
+  padding-left:10px;
+}
+.trsecond th img{
+   max-height:75%;
+   max-width:75%;
+}
+.conteudofiltro {
+
+
+}
+.div-select {
+    width:220px;  /* Tamanho final do select */
+    overflow:hidden; /* Esconde o conteúdo que passar do tamanho especificado */
+}
+
+.div-select select {
+      background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-select.gif) no-repeat #354880;  /* Imagem de fundo (Seta) */
+      background-position: 175px center;  /*Posição da imagem do background*/
+      width: 240px; /* Tamanho do select, maior que o tamanho da div "div-select" */
+      height:48px; /* altura do select, importante para que tenha a mesma altura em todo os navegadores */
+      font-family:Arial, Helvetica, sans-serif; /* Fonte do Select */
+      font-size:18px; /* Tamanho da Fonte */
+      padding:13px 20px 13px 12px; /* Configurações de padding para posicionar o texto no campo */
+      color:#fff; /* Cor da Fonte */
+      text-indent: 0.01px; /* Remove seta padrão do FireFox */
+      text-overflow: "";  /* Remove seta padrão do FireFox */
+
+
+}
+.botao{
+
+    border: none;
+    color: #4CAF50;
+    padding: 8px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-top:3%;
+    border-radius:5px;
+}
+.botao1{
+    background-color: whitesmoke;
+    color: #143642;
+    border: 2px solid #555555;
+}
+.botao2{
+  background-color: #2e2e2e;
+  color: whitesmoke;
+  border: 2px solid #555555;
+}
+
+.botao1:hover {
+    background-color:#143642 ;
+    color: whitesmoke;
+}
+.botao2:hover {
+    background-color:#143642 ;
+    color: whitesmoke;
+}
+input[type=text],input[type=password]{
+    color:whitesmoke !important;
+    background-color: transparent;
+    border:none;
+    border-bottom: solid;
+    border-color: whitesmoke;
+    border-width: thin;
+    padding-left:8%;
+    font-size:20px;
+    height: auto;
+    width:120%;
+    padding-top:5%;
+
+}
+input::placeholder{
+    color: whitesmoke;
+    opacity: 1;
+}
+
+input:focus{
+    outline:none;
+}
+.loginform{
+	position:absolute;
+	margin-left:1%;
+	margin-top:3%;
+	width: 2%;
+	height:4%;
+}
