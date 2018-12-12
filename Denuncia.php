@@ -46,10 +46,9 @@ else{
       <div class="screen-body">
         <div class="screen-body-item left">
           <div class="app-title">
-            <span>CONTACT</span>
-            <span>US</span>
+            <span>Denuncie</span>
           </div>
-          <div class="app-contact">CONTACT INFO : +62 81 314 928 595</div>
+          <div class="app-contact"></div>
         </div>
         <div class="screen-body-item">
           <div class="app-form">
