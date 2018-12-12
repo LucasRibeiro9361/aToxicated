@@ -88,13 +88,13 @@ else{
               </div>
               <div class="row">
                  <div class="col-xl-12 Estado">
-                   Estado<br>
+                   E-mail<br>
                    <?php echo $email;?>
                  </div>
               </div>
               <div class="row">
                  <div class="col-xl-12 Nicklol">
-                   Nick do LOL<br>
+                   Genero<br>
                    <?php echo $genero;?>
                  </div>
               </div>
@@ -117,26 +117,34 @@ else{
               <div class="row">
                   <div class="col-xl-6 convite">
                       <div class="row">
-                      <div class="col-xl-12 convitetitulo">
+                        <div class="col-xl-12 convitetitulo">
                         Convite Equipes
                       </div>
-                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 containerconvite ">
+                        </div>
+                    </div>
                   </div>
                   <div class="col-xl-6 convitetime">
                     <div class="row">
-                    <div class="col-xl-12 convitetitulo">
-                      Convite Jogadores
+                      <div class="col-xl-12 convitetitulo">
+                        Convite Jogadores
+                      </div>
                     </div>
+                    <div class="row">
+                        <div class="col-xl-12 containerconvitetime">
+                        </div>
                     </div>
                   </div>
               </div>
           </div>
           <div class="col-xl-12">
               <div class="row">
-                  <div class="col-xl-9 chati">
+                  <div class="col-xl-8 chati">
                     <?php include 'chat/chat.php';?>
                   </div>
-                    <div class="col-xl-3 chatiamigos">
+                    <div class="col-xl-4 chatiamigos">
                       <?php include 'chat/amizad.php';?>
                   </div>
               </div>
@@ -168,8 +176,18 @@ else{
         $cdamigos=$_POST['cdamigos'];
         if ($_POST['botao2']=="Aceitar") {
           $sql = "UPDATE tb_amigos SET status=1 WHERE cd_amigos=$cdamigos";
+          if ($conn->query($sql) === TRUE) {
+              echo "Record updated successfully";
+          } else {
+              echo "Error updating record: " . $conn->error;
+          }
         }else{
           $sql = "UPDATE tb_amigos SET status=2 WHERE cd_amigos=$cdamigos";
+          if ($conn->query($sql) === TRUE) {
+              echo "Record updated successfully";
+          } else {
+              echo "Error updating record: " . $conn->error;
+        }
       }
     }
   ?>

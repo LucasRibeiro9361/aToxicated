@@ -1,12 +1,7 @@
-<center>
-<table style="width:30%; background-color: #FFFFFF;">
-  <tr>
-    <th>Nome</th>
-    <th>Nick CS</th>
-    <th>Nick LOL</th>
-    <th></th>
-  </tr>
-</center>
+<div class="tituloamigos">
+  <center> Lista de amigos</center>
+</div>
+<table width="100%;padding-left;">
 <?php
 $id = $_SESSION["cdusuario"];
 $sql = "SELECT IF(id_usuario1=$id,id_usuario2,id_usuario1) AS usuario, Plol.nick as lol, Pcs.nick as cs, U.usuario as nome
@@ -21,10 +16,10 @@ WHERE ((id_usuario1 = $id AND id_usuario2 <> $id) OR (id_usuario1 <> $id AND id_
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
+              echo "<tr class='trfirst'>";
               echo "<th>".$row['nome']."</th>";
-              echo "<th>".$row['cs']."</th>";
               echo "<th>".$row['lol']."</th>";
-              echo "<th><form method='POST' action=''><input type='hidden' value='".$row['usuario']."' name='cd1'><input type='submit' name='botao' value='abrir conversa'></form></th></tr>";
+              echo "<th><form method='POST' action=''><input type='hidden' value='".$row['usuario']."' name='cd1'><input class='butao butao1' type='submit' name='botao' value='conversar'></form></th></tr>";
             }
         } else {
             echo "Sem amigos";

@@ -1,0 +1,20 @@
+.tituloamigos{
+    border-bottom: 2px  black solid !important;
+    margin:0;
+    font-family:montserrat;
+    font-size:30px;
+}
+.trfirst th{
+  border-bottom: 2px  black solid !important;
+  margin:0;
+  font-family:montserrat;
+  font-size:15px;
+  padding-top:5px;
+  padding-bottom: 5px;
+
+
+}
+.trfirst th:first-child{
+  padding-left: 10px;
+
+}

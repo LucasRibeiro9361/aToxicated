@@ -147,6 +147,32 @@ font-family: montserrat;
     background-color:#143642 ;
     color: whitesmoke;
 }
+.butao{
+
+    border: none;
+    color: #4CAF50;
+    padding: 2px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-top:3%;
+    border-radius:5px;
+}
+.butao1{
+    background-color: whitesmoke;
+    color: #143642;
+    border: 2px solid #555555;
+}
+
+.butao1:hover {
+    background-color:#143642 ;
+    color: whitesmoke;
+}
 .convite{
   height:450px;
   border:solid;
@@ -159,15 +185,35 @@ font-family: montserrat;
   border-color:red;
 
 }
+.convitetitulo{
+  background-color:whitesmoke;
+  font-family:montserrat ;
+  font-size:35px;
+  height:50px;
+}
+.containerconvite{
+  height:400px;
+  background-color:yellow;
+}
+.containerconvitetime{
+  height:400px;
+  background-color:yellow;
+}
 .chati{
   height:450px;
   border:solid;
   border-color:red;
+  margin:0 !important;
+  padding:0 !important;
+  background-color:#dedede;
 }
 .chatiamigos{
   height:450px;
   border:solid;
   border-color:red;
+  background-color:#dedede;
+  margin:0 !important;
+  padding:0 !important;
 }
 .convitetitulo{
   border:solid;
