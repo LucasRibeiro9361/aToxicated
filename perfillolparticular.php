@@ -164,19 +164,19 @@ if ($result->num_rows > 0) {
 
     ?>
 
-<div class="container-fluid">
+<div class="container-fluid geral">
   <div class="row">
     <div class="col-xl-2 containerperfilgeral">
        <div class="col-xs-12">
           <div class="row">
             <div class="col-xl-4 iconperfilgeral ">
-               <img style="max-width:100%;max-height:100%;float:right;" src="img/iconcs.png">
+              <a href="profilecsgo.php"> <img style="max-width:100%;max-height:100%;float:right;" src="img/iconcs.png"></a>
             </div>
              <div class="col-xl-4 iconperfilgeral">
-                <img style="max-width:100%;max-height:100%;float:center;padding-left:25%;" src="img/iconlogin2.png">
+            <a href="profilecsgo.php">  <img style="max-width:100%;max-height:100%;float:center;padding-left:25%;" src="img/iconlogin2.png"></a>
              </div>
              <div class="col-xl-4 iconperfilgeral">
-                <img style="max-width:100%;max-height:100%;float:left;" src="img/iconlol.png">
+             <a href="profilecsgo.php"><img style="max-width:100%;max-height:100%;float:left;" src="img/iconlol.png"></a>
              </div>
           </div>
           <div class="row">

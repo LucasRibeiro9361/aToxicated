@@ -2,6 +2,9 @@ body  {
     background-image: url("img/bg-masthead.jpg");
     background-color: #cccccc;
 }
+.geral{
+  margin-top:1%;
+}
 .bordateste{
   border:solid;
   border-color: green;
@@ -20,9 +23,11 @@ body  {
 .containerperfillol{
   height: 900px;
   border:solid;
-  color:green;
+  color:black;
   margin:0 !important;
   padding:0 !important;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 .rota{
   line-height: 20px;
@@ -66,11 +71,17 @@ body  {
   border-bottom:solid;
   border-width: medium;
   color:red;
-  border-color: whitesmoke;
+  border-color: black;
   margin:0 !important;
   padding:0 !important;
   margin-top:20px !important;
   padding-bottom:5px !important;
+  transition:0.1;
+}
+.iconperfilgeral img:hover{
+    max-width: 90% !important;
+    max-height:90% !important;
+
 }
 .imgperfilgeral{
     height: 125px;
@@ -95,30 +106,35 @@ font-family: montserrat;
   margin-top:7%;
   font-size:25px;
   font-family: montserrat;
+  text-align: left;
 
 }
 .Nicklol{
   margin-top:7%;
   font-size:25px;
   font-family: montserrat;
+  text-align: left;
 
 }
 .Objetivo{
   margin-top:7%;
   font-size:25px;
   font-family: montserrat;
+  text-align: left;
 
 }
 .sobre{
   margin-top:7%;
-  font-size:25px;
+  font-size:25px !important;
   font-family: montserrat;
+  text-align: left;
 
 }
 .editarperfil{
   margin-top:35%;
   font-size:30px;
   font-family: montserrat;
+  text-align: left;
 
 }
 .botao{
@@ -134,7 +150,7 @@ font-family: montserrat;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     cursor: pointer;
-    margin-top:3%;
+    margin-top:70% !important;
     border-radius:5px;
 }
 .botao1{
@@ -175,14 +191,13 @@ font-family: montserrat;
 }
 .convite{
   height:450px;
-  border:solid;
-  border-color:red;
-
+border:none;
+border-right:2px solid;
 }
 .convitetime{
   height:450px;
-  border:solid;
-  border-color:red;
+  border:none;
+  border-left:2px solid;
 
 }
 .convitetitulo{
@@ -202,7 +217,7 @@ font-family: montserrat;
 .chati{
   height:450px;
   border:solid;
-  border-color:red;
+  border-color:black;
   margin:0 !important;
   padding:0 !important;
   background-color:#dedede;
@@ -214,6 +229,7 @@ font-family: montserrat;
   background-color:#dedede;
   margin:0 !important;
   padding:0 !important;
+  overflow:auto;
 }
 .convitetitulo{
   border:solid;

@@ -79,6 +79,12 @@ body  {
   padding:0 !important;
   margin-top:20px !important;
   padding-bottom:5px !important;
+  transition: 0.1;
+}
+.iconperfilgeral img:hover{
+    max-width: 90% !important;
+    max-height:90% !important;
+
 }
 .imgperfilgeral{
     height: 125px;

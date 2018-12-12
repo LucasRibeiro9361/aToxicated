@@ -37,7 +37,7 @@
       <div class="col-xl-12" id="wrapper">
         <div id="menu">
             <p class="welcome"><b><?php echo $_SESSION['nickamigo']; ?></b></p>
-            <p class="logout"><form method="post" action=""><input type="submit" name="botaoo" value="sair"></form></p>
+            <p class="logout"><form method="post" action=""><button class="botaochatquit" style="background:transparent;border:none;" type="submit" name="botaoo"><img src="img/quitchat.png"></button></form></p>
             <div style="clear:both"></div>
         </div>
           <div id="chatbox">
@@ -59,8 +59,10 @@ if(file_exists($link) && filesize($link) > 0){
 ?>
 </div>
     <form name="message" action="">
-        <input name="usermsg" type="text" id="usermsg" size="63"/>
-        <input name="submitmsg" type="submit" id="submitmsg" value="Enviar"/>
+        <input name="usermsg" type="text" id="usermsg" placeholder="Digite sua Mensagem :)" size="63"/>
+        <button class="botaochatenviar" style="background:transparent;border:none;" name="submitmsg" type="submit" id="submitmsg" value="Enviar"/>
+          <img src="img/sendchat.png">
+      </button>
     </form>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js">
     </script>
