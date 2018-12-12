@@ -55,18 +55,18 @@ WHERE id_Topo=$id or id_Selva=$id or id_meio=$id or id_atirador=$id or id_suport
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
       while($row = $result->fetch_assoc()) {
-        echo $row['nome']."<br>"
-        .$row['descricao']."<br>"
-        .$row['objetivo']."<br>"
-        .$row['estado']."<br>"
-        .$row['elominimo']."<br>"
-        .$row['elomaximo']."<br>"
-        .$row['topo']."<br>"
-        .$row['selva']."<br>"
-        .$row['meio']."<br>"
-        .$row['atirador']."<br>"
-        .$row['suporte']."<br>"
-        .$row['dono']."<br>";
+        echo $nome= $row['nome']."<br>"
+        $descricao= $row['descricao']."<br>"
+      $objetivo= $row['objetivo']."<br>"
+      $estado = $row['estado']."<br>"
+      $elominimo = $row['elominimo']."<br>"
+      $elomaximo = $row['elomaximo']."<br>"
+      $topo = $row['topo']."<br>"
+      $selva = $row['selva']."<br>"
+      $meio = $row['meio']."<br>"
+      $atirador = $row['atirador']."<br>"
+      $suporte = $row['suporte']."<br>"
+      $row['dono']."<br>";
         $cdequipe=$row['cd_equipelol'];
         $dono=$row['dono'];
       }
@@ -120,7 +120,7 @@ WHERE id_Topo=$id or id_Selva=$id or id_meio=$id or id_atirador=$id or id_suport
           </div>
           <div class="col-xl-12">
               <div class="row">
-                  <div class="col-xl-3 row1perfillol nivelimg"><center>Nome<br><br><?php echo $level;?></center></div>
+                  <div class="col-xl-3 row1perfillol nivelimg"><center>Nome<br><br><?php echo $nome;?></center></div>
                   <div class="col-xl-3 row1perfillol"><center>Elo<br><br><?php echo $elo;?></center></div>
                   <div class="col-xl-3 row1perfillol rota"><center>Role principal<br><?php echo "<img src='".$lane1."'>";?></center></div>
                   <div class="col-xl-3 row1perfillol">Time do jogador:<br><?php echo $equipe;?></div>
