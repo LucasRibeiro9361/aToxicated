@@ -118,4 +118,7 @@ $suporte;
 		</form>
 		</center>
   </body>
+	<br><footer>
+		<?php include 'footer.php';?>
+	</footer>
 </html>

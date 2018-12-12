@@ -102,12 +102,7 @@ body{background-image: url(img/background.jpg);}
 		</div>
 
 	</form>
-
-
 </body>
-<footer>
-</footer>
-
 <?php
 	if (isset($_POST['email']) && isset($_POST['senha'])){
 
@@ -139,4 +134,7 @@ include 'connect.php';
 
 	?>
 </body>
+<footer>
+	<?php include 'footer.php';?>
+</footer>
 </html>

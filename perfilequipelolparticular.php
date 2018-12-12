@@ -81,35 +81,10 @@ WHERE id_Topo=$id or id_Selva=$id or id_meio=$id or id_atirador=$id or id_suport
       }
     }
     echo $id."<br>".$dono;
-  if ($id == $cddono) {
-    echo "foi";
-    $sql = "SELECT C.cd_convite, L.lane AS lane, P.nick AS nome, C.mensagem, C.status, C.id_jogadorlol
-            FROM tb_conviteusuarioequipe AS C
-            INNER JOIN tb_lanelol AS L
-            ON C.id_lanelol=L.cd_lanelol
-            INNER JOIN tb_perfillol AS P
-            ON C.id_jogadorlol=P.cd_perfillol
-            WHERE C.id_equipelol=$cdequipe and status = 0 ";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-      while($row = $result->fetch_assoc()) {
-        echo "<form method='POST'>
-                O jogador <strong>".$row['nome']."</strong> quer se juntar a sua equipe atuando na função <strong>".$row['lane']
-                ."</strong><br>mensagem: <strong>".$row['mensagem']."</strong><br><input type='hidden' name='cdconvite' value='".$row['cd_convite']."'>
-                <input type='hidden' name='lane' value='".$row['lane']."'><input type='hidden' name='cdconvite' value='".$row['id_jogadorlol']."'>
-                <input type='submit' name='botao' value='Aceitar'><input type='submit' name='botao' value='Recusar'><br></form>";
-      }
-    }else{
-      echo "Sem convites";
+    if ($id == $cddono) {
+      include 'conviteperfil.php';
     }
-    if (isset($_POST['botao'])) {
-    if ($_POST['botao']=="Aceitar") {
-
-    }else{
-    }
-  }
-  }
-    ?>
+      ?>
     <div class="container-fluid">
       <div class="row">
         <div class="col-xl-6 containerperfillol">
@@ -159,4 +134,7 @@ WHERE id_Topo=$id or id_Selva=$id or id_meio=$id or id_atirador=$id or id_suport
       </div>
     </div>
   </body>
+  <br><footer>
+  	<?php include 'footer.php';?>
+  </footer>
 </html>

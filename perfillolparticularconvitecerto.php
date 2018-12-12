@@ -332,4 +332,7 @@ if ($result->num_rows > 0) {
 ?>
 <!--Fim Conviteamigo-->
   </body>
+  <br><footer>
+  	<?php include 'footer.php';?>
+  </footer>
 </html>

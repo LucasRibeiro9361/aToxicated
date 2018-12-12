@@ -941,4 +941,7 @@ $cd = $_SESSION['cdusuario'];
       echo "Erro: " . $conn->error;
     }  }  ?>
   </body>
+  <br><footer>
+  	<?php include 'footer.php';?>
+  </footer>
 </html>
