@@ -16,7 +16,7 @@ ini_set(“display_errors”, 0 );
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="perfillolparticular.css">
+        <link rel="stylesheet" type="text/css" href="perfilequipelolparticular.css">
         <link rel="stylesheet" href="css/bootstrap/bootstrap-grid.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,17 +55,17 @@ WHERE id_Topo=$id or id_Selva=$id or id_meio=$id or id_atirador=$id or id_suport
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
       while($row = $result->fetch_assoc()) {
-        echo $nome= $row['nome']."<br>"
-        $descricao= $row['descricao']."<br>"
-      $objetivo= $row['objetivo']."<br>"
-      $estado = $row['estado']."<br>"
-      $elominimo = $row['elominimo']."<br>"
-      $elomaximo = $row['elomaximo']."<br>"
-      $topo = $row['topo']."<br>"
-      $selva = $row['selva']."<br>"
-      $meio = $row['meio']."<br>"
-      $atirador = $row['atirador']."<br>"
-      $suporte = $row['suporte']."<br>"
+        echo $nome= $row['nome']."<br>";
+        $descricao= $row['descricao']."<br>";
+      $objetivo= $row['objetivo']."<br>";
+      $estado = $row['estado']."<br>";
+      $elominimo = $row['elominimo']."<br>";
+      $elomaximo = $row['elomaximo']."<br>";
+      $topo = $row['topo']."<br>";
+      $selva = $row['selva']."<br>";
+      $meio = $row['meio']."<br>";
+      $atirador = $row['atirador']."<br>";
+      $suporte = $row['suporte']."<br>";
       $row['dono']."<br>";
         $cdequipe=$row['cd_equipelol'];
         $dono=$row['dono'];
@@ -115,41 +115,43 @@ WHERE id_Topo=$id or id_Selva=$id or id_meio=$id or id_atirador=$id or id_suport
         <div class="col-xl-6 containerperfillol">
           <div class="col-xl-12">
               <div class="row">
-                  <div class="col-xl-12 colunatitulo"><center>Funcao e ELO</center></div>
+                  <div class="col-xl-12 colunatitulo"><center>Informações</center></div>
               </div>
           </div>
           <div class="col-xl-12">
               <div class="row">
                   <div class="col-xl-3 row1perfillol nivelimg"><center>Nome<br><br><?php echo $nome;?></center></div>
                   <div class="col-xl-3 row1perfillol"><center>Elo<br><br><?php echo $elo;?></center></div>
-                  <div class="col-xl-3 row1perfillol rota"><center>Role principal<br><?php echo "<img src='".$lane1."'>";?></center></div>
-                  <div class="col-xl-3 row1perfillol">Time do jogador:<br><?php echo $equipe;?></div>
+                  <div class="col-xl-3 row1perfillol"><center>elominimo<br><br><?php echo $elominimo;?></center></div>
+                  <div class="col-xl-3 row1perfillol"><center>elomaximo<br><br><?php echo $elomaximo;?></center></div>
               </div>
           </div>
           <div class="col-xl-12 ">
               <div class="row">
-                  <div class="col-xl-12 colunatitulo"><center>Estatisticas</center></div>
+                  <div class="col-xl-12 colunatitulo"><center></center></div>
               </div>
           </div>
           <div class="col-xl-12">
               <div class="row">
-                  <div class="col-xl-3 row3perfillol winrate"><center>Winrate<br><img src="img/winrate.png"></center></div>
-                  <div class="col-xl-3 row3perfillol partida"><center>Partidas<br><img src="img/partida.png"></center></div>
-                  <div class="col-xl-3 row3perfillol"><center>Vitoria</center></div>
-                  <div class="col-xl-3 row3perfillol"><center>Derrota</center></div>
+                <div class="col-xl-3 row3perfillol "><center>objetivo<br><br><?php echo $objetivo;?></center></div>
+                <div class="col-xl-3 row3perfillol "><center>estado<br><br><?php echo $estado;?></center></div>
+                <div class="col-xl-3 row3perfillol"><center>descricao<br><br><?php echo $descricao;?></center></div>
+                <div class="col-xl-3 row3perfillol"><center>dono<br><br><?php echo $dono;?></center></div>
               </div>
           </div>
           <div class="col-xl-12 ">
               <div class="row">
-                  <div class="col-xl-12 colunatitulo"><center>Champions</center></div>
+                  <div class="col-xl-12 colunatitulo"><center>Posições</center></div>
               </div>
           </div>
-          <div class="col-xl-12 ">
+          <div class="col-xl-12">
               <div class="row">
-                  <div class="col-xl-3 row3perfillol champ"><center><?php echo $campeao1;?><br><?php echo "<img src='".$img1."'>";?></center></div>
-                  <div class="col-xl-3 row3perfillol champ"><center><?php echo $campeao2;?><br><?php echo "<img src='".$img2."'>";?></center></div>
-                  <div class="col-xl-3 row3perfillol champ"><center><?php echo $campeao3;?><br><?php echo "<img src='".$img3."'>";?></center></div>
-                  <div class="col-xl-3 row3perfillol champ"><center><?php echo $campeao4;?><br><?php echo "<img src='".$img4."'>";?></center></div>
+                <div class="col-xl-2 row3perfillol "><center>topo<br><br><?php echo $topo;?></center></div>
+                <div class="col-xl-2 row3perfillol "><center>selva<br><br><?php echo $selva;?></center></div>
+                <div class="col-xl-2 row3perfillol"><center>meio<br><br><?php echo $meio;?></center></div>
+                <div class="col-xl-2 row3perfillol"><center>atirador<br><br><?php echo $atirador;?></center></div>
+                <div class="col-xl-2 row3perfillol"><center>suporte<br><br><?php echo $suporte;?></center></div>
+                <div class="col-xl-2 row3perfillol"><center>Equipe<br><br><?php echo $cdequipe;?></center></div>
               </div>
           </div>
 

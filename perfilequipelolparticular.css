@@ -1,5 +1,157 @@
-body{
-  font-size:10px;
+body  {
+    background-image: url("img/bg-masthead.jpg");
+    background-color: #cccccc;
+}
+.bordateste{
+  border:solid;
+  border-color: green;
+}
+.containerperfilgeral{
+  height:900px;
+  border:solid;
+  color:Black;
+  margin-left:15%;
+  background-color:rgba(51, 204, 51, 0.8);
+  border-top-left-radius:20px;
+  border-bottom-left-radius: 20px;
+  border-color:black;
+
+}
+.containerperfillol{
+  height: 900px;
+  border:solid;
+  color:green;
+  margin:0 !important;
+  padding:0 !important;
+}
+.rota{
+  line-height: 20px;
+}
+.rota img{
+  max-width: 65%;
+  max-height: 65%;
+  padding-bottom: 20px;
+}
+.winrate img{
+   max-width: 80%;
+   max-height:80%;
+}
+.partida img{
+   max-width: 100%;
+   max-height:100%;
+   padding-bottom:20px;
+}
+.champ img{
+  min-width:80%;
+  min-height: 90%;
+
+}
+.row1perfillol{
+  height:175px;
+  font-size:25px;
+  border:solid;
+  color:black;
+  background-color:whitesmoke;
+}
+.row3perfillol{
+  height:200px;
+  font-size:25px;
+  border:solid;
+  color:black;
+  background-color:whitesmoke;
+}
+.colunatitulo{
+  height:48px;
+  font-size:30px;
+  border:solid;
+  color:whitesmoke;
+  border-color:black;
+  background-color:#119822;
+}
+.iconperfilgeral{
+  height:60px;
+  border:none;
+  border-bottom:solid;
+  border-width: medium;
+  color:red;
+  border-color: whitesmoke;
+  margin:0 !important;
+  padding:0 !important;
+  margin-top:20px !important;
+  padding-bottom:5px !important;
+}
+.imgperfilgeral{
+    height: 125px;
+    border-radius:250px;
+    margin-left:30%;
+    margin-top:5%;
+    border-color:black !important;
+}
+.reputacao{
+font-size:35px;
+font-family: montserrat;
+}
+.nomeperfilgeral{
+font-size:40px;
+font-family: montserrat;
+}
+.idade{
+  font-size:20px;
+  font-family: montserrat;
+}
+.Estado{
+  margin-top:7%;
+  font-size:25px;
   font-family: montserrat;
 
+}
+.Nicklol{
+  margin-top:7%;
+  font-size:25px;
+  font-family: montserrat;
+
+}
+.Objetivo{
+  margin-top:7%;
+  font-size:25px;
+  font-family: montserrat;
+
+}
+.sobre{
+  margin-top:7%;
+  font-size:25px;
+  font-family: montserrat;
+
+}
+.editarperfil{
+  margin-top:35%;
+  font-size:30px;
+  font-family: montserrat;
+
+}
+.botao{
+
+    border: none;
+    color: #4CAF50;
+    padding: 8px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-top:3%;
+    border-radius:5px;
+}
+.botao1{
+    background-color: whitesmoke;
+    color: #143642;
+    border: 2px solid #555555;
+}
+
+.botao1:hover {
+    background-color:#143642 ;
+    color: whitesmoke;
 }
