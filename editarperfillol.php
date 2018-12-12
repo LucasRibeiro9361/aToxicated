@@ -23,10 +23,8 @@ else{
     <div class="row">
         <div class="col-md-12" id="containericonlogin">
           <center>	<img src="img/iconlogin.png" id="iconimg"></center>
-        </div>
     </div>
   <body style="background-color: #EEE;">
-    <div class="container" style="margin-top: 30px; margin-bottom: 30px; padding-bottom: 10px; background-color: #FFF;">
 <center>
       <a href="perfillolparticular.php"><button class="botao botao1">Voltar</button></a>
       </center>
@@ -115,14 +113,14 @@ else{
     ?>
     <center>
     <form method="post">
-    <table class='table table-striped' ID="alter" style="width:70%; height:100%;">
+    <table class='table table-striped' ID="alter" style="height:70%;">
     <tr>
       <td><b>Informações</b></td>
       <td><b>Valor</b></td>
     </tr>
     <tr class="dif">
       <td><b>objetivo</b></td>
-      <td><b>    <select class="form-control" name="objetivo" id="camp">
+      <td><b>    <select style="height:auto!important;" style="height:auto!important;"class="form-control" name="objetivo" id="camp">
             <option value="lazer">Lazer</option>
             <option value="ranqueada">Ranqueada</option>
             <option value="campeonato">Campeonato</option>
@@ -130,7 +128,7 @@ else{
     </tr>
     <tr>
       <td><b>Estado</b></td>
-      <td><b><select class="form-control" name="estado" id="camp">
+      <td><b><select style="height:auto!important;" class="form-control" name="estado" id="camp">
               <option value="AC">AC</option>
         			<option value="AL">AL</option>
         			<option value="AP">AP</option>
@@ -162,7 +160,7 @@ else{
     </tr>
     <tr class="dif">
       <td><b>campeao 1</b></td>
-      <td><b><select class="form-control" name="camp1" id="camp">
+      <td><b><select style="height:auto!important;" class="form-control" name="camp1" id="camp">
         <option value="142">nenhum</option>
         <option value="1">Aatrox</option>
         <option value="2">Ahri</option>
@@ -309,7 +307,7 @@ else{
     </tr>
     <tr>
       <td><b>campeao2</b></td>
-      <td><b><select class="form-control" name="camp2" id="camp">
+      <td><b><select style="height:auto!important;" class="form-control" name="camp2" id="camp">
         <option value="142">nenhum</option>
         <option value="1">Aatrox</option>
         <option value="2">Ahri</option>
@@ -456,7 +454,7 @@ else{
     </tr>
     <tr class="dif">
       <td><b>campeao 3</b></td>
-      <td><b><select class="form-control" name="camp3" id="camp">
+      <td><b><select style="height:auto!important;" class="form-control" name="camp3" id="camp">
         <option value="142">nenhum</option>
         <option value="1">Aatrox</option>
         <option value="2">Ahri</option>
@@ -603,7 +601,7 @@ else{
     </tr>
     <tr>
       <td><b>campeao4</b></td>
-      <td><b><select class="form-control" name="camp4" id="camp">
+      <td><b><select style="height:auto!important;" class="form-control" name="camp4" id="camp">
         <option value="142">nenhum</option>
         <option value="1">Aatrox</option>
         <option value="2">Ahri</option>
@@ -750,7 +748,7 @@ else{
     </tr>
     <tr class="dif">
       <td><b>campeao5</b></td>
-      <td><b><select class="form-control" name="camp5" id="camp">
+      <td><b><select style="height:auto!important;" class="form-control" name="camp5" id="camp">
         <option value="142">nenhum</option>
         <option value="1">Aatrox</option>
         <option value="2">Ahri</option>
@@ -897,7 +895,7 @@ else{
     </tr>
     <tr>
       <td><b>lane 1</b></td>
-      <td><b>      <select class="form-control" name="lane1" id="camp">
+      <td><b>      <select style="height:auto!important;" class="form-control" name="lane1" id="camp">
               <option value="1">topo</option>
               <option value="2">Selva</option>
               <option value="3">Meio</option>
@@ -907,20 +905,20 @@ else{
     </tr>
     <tr class="dif">
       <td><b>lane 2</b></td>
-      <td><b>      <select class="form-control" name="lane2" id="camp">
+      <td><b>      <select style="height:auto!important;" class="form-control" name="lane2" id="camp">
               <option value="1">topo</option>
               <option value="2">Selva</option>
               <option value="3">Meio</option>
               <option value="4">Atirador</option>
               <option value="5">Suporte</option>
             </select></b></td>
-    </tr><br><br><button type="submit" name="go">salvar</button>
-</b></td>
-</tr>
+    </tr>
 </div>
 </div>
+<button type="submit" name="go">salvar</button>
 </form>
 </center>
+</div>
 <?php
 if(isset($_POST['go'])){
       $objetivo = $_POST['objetivo'];
@@ -941,7 +939,4 @@ $cd = $_SESSION['cdusuario'];
       echo "Erro: " . $conn->error;
     }  }  ?>
   </body>
-  <br><footer>
-  	<?php include 'footer.php';?>
-  </footer>
 </html>

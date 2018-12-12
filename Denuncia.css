@@ -6,7 +6,7 @@
 
 .background {
   display: fixed;
-  min-height: 100vh;
+  min-height: 50%;
 }
 
 .container {
