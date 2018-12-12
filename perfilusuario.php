@@ -134,8 +134,10 @@ else{
           <div class="col-xl-12">
               <div class="row">
                   <div class="col-xl-9 chati">
+                    <?php include 'chat/chat.php';?>
                   </div>
                     <div class="col-xl-3 chatiamigos">
+                      <?php include 'chat/amizad.php';?>
                   </div>
               </div>
           </div>
