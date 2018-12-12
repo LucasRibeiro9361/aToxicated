@@ -82,7 +82,7 @@ WHERE id_Topo=$id or id_Selva=$id or id_meio=$id or id_atirador=$id or id_suport
     }
     echo $id."<br>".$dono;
     if ($id == $cddono) {
-      include
+      include 'conviteperfil.php';
     }
       ?>
     <div class="container-fluid">
