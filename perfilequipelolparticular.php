@@ -55,17 +55,17 @@ WHERE id_Topo=$id or id_Selva=$id or id_meio=$id or id_atirador=$id or id_suport
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
       while($row = $result->fetch_assoc()) {
-        echo $nome= $row['nome']."<br>"
-        $descricao= $row['descricao']."<br>"
-      $objetivo= $row['objetivo']."<br>"
-      $estado = $row['estado']."<br>"
-      $elominimo = $row['elominimo']."<br>"
-      $elomaximo = $row['elomaximo']."<br>"
-      $topo = $row['topo']."<br>"
-      $selva = $row['selva']."<br>"
-      $meio = $row['meio']."<br>"
-      $atirador = $row['atirador']."<br>"
-      $suporte = $row['suporte']."<br>"
+        echo $nome= $row['nome']."<br>";
+        $descricao= $row['descricao']."<br>";
+      $objetivo= $row['objetivo']."<br>";
+      $estado = $row['estado']."<br>";
+      $elominimo = $row['elominimo']."<br>";
+      $elomaximo = $row['elomaximo']."<br>";
+      $topo = $row['topo']."<br>";
+      $selva = $row['selva']."<br>";
+      $meio = $row['meio']."<br>";
+      $atirador = $row['atirador']."<br>";
+      $suporte = $row['suporte']."<br>";
       $row['dono']."<br>";
         $cdequipe=$row['cd_equipelol'];
         $dono=$row['dono'];
