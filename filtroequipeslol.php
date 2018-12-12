@@ -9,7 +9,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/scripts.js"></script>
     <meta charset="utf-8">
-    <title></title>
+    <title>Filtrar Equipes</title>
   </head>
   <body>
     <?php
@@ -21,9 +21,6 @@
     	header('Location: login.php');
     }
     ?>
-    <!DOCTYPE html>
-    <html lang="en" dir="ltr">
-      <head>
         <meta charset="utf-8">
         <title></title>
       </head>
@@ -190,7 +187,7 @@
     </div>
     			<p>
     				<h1>Pesquisar pelo Nick</h1>
-    			<form method="post" action="perfilequipelolpublica.php">
+    			<form method="post" action="codigo.php">
     				nome da equipe<input type="text" name="nome" placeholder="nickname">
     				<input type="submit" value="submit">
       </body>

@@ -133,8 +133,14 @@ WHERE id_Topo=$id or id_Selva=$id or id_meio=$id or id_atirador=$id or id_suport
         </div>
       </div>
     </div>
+    <form method="POST" action="codigo3.php">
+      <input type="submit" name="sair" value="Sair da equipe">
+    </form>
   </body>
   <br><footer>
-  	<?php include 'footer.php';?>
+  	<?php
+    $_SESSION['cdequipe']=$cdequipe;
+    $_SESSION['id']=$id;
+    include 'footer.php';?>
   </footer>
 </html>

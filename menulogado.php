@@ -48,11 +48,12 @@ text-decoration:none !important;
 					<nav class="main_nav">
 						<ul class="d-flex flex-row align-items-center justify-content-start">
 					<div style="width:100%;"class="dropdown show">
-	<button style="width:70%;margin-left:45%;color:#262626;background-color:whitesmoke;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<button style="width:70%;border-color:#053B06;margin-left:45%;color:#262626;background-color:whitesmoke;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		<img style="
 		width:17%;
 		margin:0;
 		padding:0;
+    float:left;
 		margin-left:-3%;"
 		src="img/iconlogin2.png">
 	<?php
@@ -61,8 +62,26 @@ text-decoration:none !important;
 	</button>
   	<div style="margin-left: 45%;width:50%;text-align:right;color:#262626;background-color:#FFFFFF;border-color:#0B5D1E;"class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 		<a class="dropdown-item" href="perfilusuario.php">Seu perfil</a>
-		<a class="dropdown-item" href="perfilequipelolparticular.php">Seu time</a>
+    <div class="dropdown-divider"></div>
+    <?php
+    include 'connect.php';
+    $id=$_SESSION['cdusuario'];
+$sql = "SELECT * FROM tb_perfillol WHERE cd_perfillol='$id'";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+  $cd1=$row['cd_perfillol'];
+}
+if(isset($cd1)){
+$sql = "SELECT * FROM tb_equipelol WHERE id_topo=$cd1 OR id_selva=$cd1 OR id_meio=$cd1 OR id_atirador=$cd1 OR id_suporte=$cd1 OR id_dono=$cd1";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+  echo "<a class='dropdown-item' href='perfilequipelolparticular.php'>Seu time</a>
+  <div class='dropdown-divider'></div>";
+}
+}
+?>
 		<a class="dropdown-item" href="Denuncia.php">Denuncia</a>
+    <div class="dropdown-divider"></div>
 		<a class="dropdown-item" href="Logout.php">Logout</a>
 	</div>
 </div>
