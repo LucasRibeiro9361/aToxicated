@@ -125,6 +125,7 @@ else{
 			while($row = $result->fetch_assoc()) {
 				$cd=$row['cd_perfillol'];
 			}
+		}
 		$nome=$_POST['nome'];
 		$descricao=$_POST['descricao'];
 		$objetivo=$_POST['objetivo'];
@@ -134,15 +135,20 @@ else{
 		if ($eminimo>$emaximo) {
 			echo "Elo Mínimo maior do que Elo máximo, por favor inverta";
 		}else{
+			$sql = "SELECT id_dono FROM tb_equipelol WHERE id_dono=$cd OR id_topo=$cd OR id_selva=$cd OR id_mid=$cd OR id_atirador=$cd OR id_suporte=$cd OR";
+			$result = $conn->query($sql);
+			if ($result->num_rows > 0) {
+					echo "Você ja é dono ou esta em uma equipe";;
+			}else{
 			$sql = "INSERT INTO tb_equipelol VALUES (null,'$nome','$descricao', '$objetivo', '$estado', '$eminimo', '$emaximo', null, null, null, null, null,$cd)";
 			if ($conn->query($sql) === TRUE) {
     echo "Equipe cadastrada!";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-		}
-	}
-}
+			} else {
+			    echo "Error: " . $sql . "<br>" . $conn->error;
+			}
+			}
+			}
+			}
 	?>
 </body>
 <br><footer>

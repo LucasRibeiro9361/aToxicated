@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link type="text/css" rel="stylesheet" href="../aToxicated/chat/chat.css"/>
+<link type="text/css" rel="stylesheet" href="../aToxicated/chat/amizad.css"/>
 </head>
       <?php
         include '../aToxicated/connect.php';
@@ -33,7 +34,7 @@
       }
         ?>
 
-      <div id="wrapper">
+      <div class="col-xl-12" id="wrapper">
         <div id="menu">
             <p class="welcome"><b><?php echo $_SESSION['nickamigo']; ?></b></p>
             <p class="logout"><form method="post" action=""><input type="submit" name="botaoo" value="sair"></form></p>

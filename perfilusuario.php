@@ -88,13 +88,13 @@ else{
               </div>
               <div class="row">
                  <div class="col-xl-12 Estado">
-                   Estado<br>
+                   E-mail<br>
                    <?php echo $email;?>
                  </div>
               </div>
               <div class="row">
                  <div class="col-xl-12 Nicklol">
-                   Nick do LOL<br>
+                   Genero<br>
                    <?php echo $genero;?>
                  </div>
               </div>
@@ -117,26 +117,36 @@ else{
               <div class="row">
                   <div class="col-xl-6 convite">
                       <div class="row">
-                      <div class="col-xl-12 convitetitulo">
+                        <div class="col-xl-12 convitetitulo">
                         Convite Equipes
                       </div>
-                      </div>
+                      <?php include 'conviteusuario.php'; ?>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 containerconvite ">
+                        </div>
+                    </div>
                   </div>
                   <div class="col-xl-6 convitetime">
                     <div class="row">
-                    <div class="col-xl-12 convitetitulo">
-                      Convite Jogadores
+                      <div class="col-xl-12 convitetitulo">
+                        Convite Jogadores
+                      </div>
+                      <?php include 'amigos.php'; ?>
                     </div>
+                    <div class="row">
+                        <div class="col-xl-12 containerconvitetime">
+                        </div>
                     </div>
                   </div>
               </div>
           </div>
           <div class="col-xl-12">
               <div class="row">
-                  <div class="col-xl-9 chati">
+                  <div class="col-xl-8 chati">
                     <?php include 'chat/chat.php';?>
                   </div>
-                    <div class="col-xl-3 chatiamigos">
+                    <div class="col-xl-4 chatiamigos">
                       <?php include 'chat/amizad.php';?>
                   </div>
               </div>
@@ -145,187 +155,5 @@ else{
         </div>
       </div>
     </div>
-  <!--Fim Conviteamigo-->
-  <?php
-    $sql = "SELECT A.cd_amigos, P.nick as nick , A.id_usuario1
-    FROM tb_amigos AS A
-    left JOIN tb_perfillol AS P
-    ON A.id_usuario1 = P.id_usuario
-    WHERE id_usuario2=$cd1 AND status=0";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-          $cd2=$row['id_usuario1'];
-          echo "<br><form method='POST'> o jogador ".$row['nick']." enviou uma solicitacao de amizade";
-          echo "<input type='hidden' value='".$row['cd_amigos']."' name='cdamigos'><br>
-            <input type='submit' name='botao2' value='Aceitar'>
-            <input type='submit' name='botao2' value='Recusar'></form><br>";
-        }
-      }else {
-        echo "Sem convites de amizade";
-      }
-      if (isset($_POST['botao2'])){
-        $cdamigos=$_POST['cdamigos'];
-        if ($_POST['botao2']=="Aceitar") {
-          $sql = "UPDATE tb_amigos SET status=1 WHERE cd_amigos=$cdamigos";
-        }else{
-          $sql = "UPDATE tb_amigos SET status=2 WHERE cd_amigos=$cdamigos";
-      }
-    }
-  ?>
-  <!--Fim Conviteamigo-->
-  <?php
-  $sql = "SELECT C.cd_convite, L.lane AS lane, C.id_lanelol, Eq.nome AS nome, C.mensagem, C.status, C.id_jogadorlol, C.id_equipelol
-          FROM tb_conviteequipeusuario AS C
-          INNER JOIN tb_lanelol AS L
-          ON C.id_lanelol=L.cd_lanelol
-          INNER JOIN tb_equipelol AS Eq
-          ON C.id_equipelol=Eq.cd_equipelol
-          WHERE C.id_jogadorlol=$cd and status = 0 ";
-  $result = $conn->query($sql);
-  if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-      echo "<form method='POST'>
-              O jogador <strong>".$row['nome']."</strong> quer que você se junte a eles atuando na função <strong>".$row['lane']
-              ."</strong><br>mensagem: <strong>".$row['mensagem']."</strong><br>
-              <input type='hidden' name='cdconvite' value='".$row['cd_convite']."'>
-              <input type='hidden' name='lane' value='".$row['id_lanelol']."'>
-              <input type='hidden' name='cdjogador' value='".$row['id_jogadorlol']."'>
-              <input type='hidden' name='cdequipe' value='".$row['id_equipelol']."'>
-              <input type='submit' name='botao' value='Aceitar'><input type='submit' name='botao' value='Recusar'><br></form>";
-    }
-  }else{
-    echo "Sem convites de equipe";
-  }
-  if (isset($_POST['botao'])) {
-    $lane=$_POST['lane'];
-    echo "asdasdasdasd".$lane;
-    $cdjogador=$_POST['cdjogador'];
-    $cdconvite=$_POST['cdconvite'];
-    $cdequipe=$_POST['cdequipe'];
-  if ($_POST['botao']=="Aceitar") {
-    if ($lane=="1") {
-      $sql = "SELECT * FROM tb_equipelol WHERE id_Topo <> 'null' and cd_equipelol=$cdequipe";
-      $result = $conn->query($sql);
-      if ($result->num_rows > 0) {
-          $sql = "UPDATE tb_perfillol SET id_equipelol='null' WHERE cd_perfillol='".$row['id_topo']."'";
-          if ($conn->query($sql) === TRUE) {
-              echo "Deletado da tabela equipe <br>";
-          } else {
-              echo "Error updating record: " . $conn->error;
-          }
-        }
-      }
-    if ($lane=="2") {
-      $sql = "SELECT * FROM tb_equipelol WHERE id_selva <> 'null' and cd_equipelol=$cdequipe";
-      $result = $conn->query($sql);
-      if ($result->num_rows > 0) {
-          $sql = "UPDATE tb_perfillol SET id_equipelol='null' WHERE cd_perfillol='".$row['id_selva']."'";
-          if ($conn->query($sql) === TRUE) {
-              echo "Deletado da tabela equipe <br>";
-          } else {
-              echo "Error updating record: " . $conn->error;
-          }
-      }
-    }
-    if ($lane=="3") {
-      $sql = "SELECT * FROM tb_equipelol WHERE id_meio <> 'null' and cd_equipelol=$cdequipe";
-      $result = $conn->query($sql);
-      if ($result->num_rows > 0) {
-          $sql = "UPDATE tb_perfillol SET id_equipelol='null' WHERE cd_perfillol='".$row['id_meio']."'";
-          if ($conn->query($sql) === TRUE) {
-              echo "Deletado da tabela equipe <br>";
-          } else {
-              echo "Error updating record: " . $conn->error;
-          }
-      }
-    }
-    if ($lane=="4") {
-      $sql = "SELECT * FROM tb_equipelol WHERE id_atirador <> 'null' and cd_equipelol=$cdequipe";
-      $result = $conn->query($sql);
-      if ($result->num_rows > 0) {
-          $sql = "UPDATE tb_perfillol SET id_equipelol='null' WHERE cd_perfillol='".$row['id_atirador']."'";
-          if ($conn->query($sql) === TRUE) {
-              echo "Deletado da tabela equipe <br>";
-          } else {
-              echo "Error updating record: " . $conn->error;
-          }
-      }
-    }
-    if ($lane=="5") {
-      $sql = "SELECT * FROM tb_equipelol WHERE id_suporte <> 'null' and cd_equipelol=$cdequipe";
-      $result = $conn->query($sql);
-      if ($result->num_rows > 0) {
-          $sql = "UPDATE tb_perfillol SET id_equipelol='null' WHERE cd_perfillol='".$row['id_suporte']."'";
-          if ($conn->query($sql) === TRUE) {
-              echo "Deletado da tabela equipe <br>";
-          } else {
-              echo "Error updating record: " . $conn->error;
-          }
-      }
-    }
-    if ($lane=="1") {
-      $sql = "UPDATE tb_equipelol SET id_topo='$cd' WHERE cd_equipelol='$cdequipe'";
-      if ($conn->query($sql) === TRUE) {
-          echo "Alterado na tabela equipe <br>";
-      } else {
-          echo "Error updating record: " . $conn->error;
-      }
-    }
-    if ($lane=="2") {
-      $sql = "UPDATE tb_equipelol SET id_selva='$cd' WHERE cd_equipelol='$cdequipe'";
-      if ($conn->query($sql) === TRUE) {
-          echo "Alterado na tabela equipe <br>";
-      } else {
-          echo "Error updating record: " . $conn->error;
-      }
-    }
-    if ($lane=="3") {
-      $sql = "UPDATE tb_equipelol SET id_meio='$cd' WHERE cd_equipelol='$cdequipe'";
-      if ($conn->query($sql) === TRUE) {
-          echo "Alterado na tabela equipe <br>";
-      } else {
-          echo "Error updating record: " . $conn->error;
-      }
-    }
-    if ($lane=="4") {
-      $sql = "UPDATE tb_equipelol SET id_atirador='$cd' WHERE cd_equipelol='$cdequipe'";
-      if ($conn->query($sql) === TRUE) {
-          echo "Alterado na tabela equipe <br>";
-      } else {
-          echo "Error updating record: " . $conn->error;
-      }
-    }
-    if ($lane=="5") {
-      $sql = "UPDATE tb_equipelol SET id_suporte='$cd' WHERE cd_equipelol='$cdequipe'";
-      if ($conn->query($sql) === TRUE) {
-          echo "Alterado na tabela equipe <br>";
-      } else {
-          echo "Error updating record: " . $conn->error;
-      }
-    }
-    $sql = "UPDATE tb_perfillol SET id_equipelol=$cdequipe WHERE cd_perfillol='$cdjogador'";
-    if ($conn->query($sql) === TRUE) {
-        echo "alterado na tabela perfillol";
-    } else {
-        echo "Error updating record: " . $conn->error;
-    }
-    $sql = "UPDATE tb_conviteusuarioequipe SET status='1' WHERE cd_convite=$cdconvite";
-    if ($conn->query($sql) === TRUE) {
-        echo "status atualizado";
-    } else {
-        echo "Error updating record: " . $conn->error;
-    }
-  }else{
-    $sql = "UPDATE tb_conviteusuarioequipe SET status='1' WHERE cd_convite=$cdconvite";
-    if ($conn->query($sql) === TRUE) {
-        echo "status atualizado";
-    } else {
-        echo "Error updating record: " . $conn->error;
-    }
-  }
-  }
-  ?>
-
   </body>
 </html>
