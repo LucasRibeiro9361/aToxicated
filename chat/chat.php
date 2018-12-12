@@ -5,6 +5,7 @@
 </head>
       <?php
         include '../aToxicated/connect.php';
+        if(isset($_SESSION['amigo'])){
           $amigo = $_SESSION['amigo'];
       $cd = $_SESSION['cdusuario'];
       $sql = "SELECT usuario FROM tb_usuario WHERE cd_usuario = $amigo";
@@ -93,3 +94,4 @@ if(file_exists($link) && filesize($link) > 0){
 </div>
 </body>
 </html>
+<?php } ?>
