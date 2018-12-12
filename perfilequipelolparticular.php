@@ -14,7 +14,12 @@ ini_set(“display_errors”, 0 );
 ?><!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="perfillolparticular.css">
+        <link rel="stylesheet" href="css/bootstrap/bootstrap-grid.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title></title>
   </head>
@@ -99,11 +104,57 @@ WHERE id_Topo=$id or id_Selva=$id or id_meio=$id or id_atirador=$id or id_suport
     }
     if (isset($_POST['botao'])) {
     if ($_POST['botao']=="Aceitar") {
-      
+
     }else{
     }
   }
   }
     ?>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-6 containerperfillol">
+          <div class="col-xl-12">
+              <div class="row">
+                  <div class="col-xl-12 colunatitulo"><center>Funcao e ELO</center></div>
+              </div>
+          </div>
+          <div class="col-xl-12">
+              <div class="row">
+                  <div class="col-xl-3 row1perfillol nivelimg"><center>Nome<br><br><?php echo $level;?></center></div>
+                  <div class="col-xl-3 row1perfillol"><center>Elo<br><br><?php echo $elo;?></center></div>
+                  <div class="col-xl-3 row1perfillol rota"><center>Role principal<br><?php echo "<img src='".$lane1."'>";?></center></div>
+                  <div class="col-xl-3 row1perfillol">Time do jogador:<br><?php echo $equipe;?></div>
+              </div>
+          </div>
+          <div class="col-xl-12 ">
+              <div class="row">
+                  <div class="col-xl-12 colunatitulo"><center>Estatisticas</center></div>
+              </div>
+          </div>
+          <div class="col-xl-12">
+              <div class="row">
+                  <div class="col-xl-3 row3perfillol winrate"><center>Winrate<br><img src="img/winrate.png"></center></div>
+                  <div class="col-xl-3 row3perfillol partida"><center>Partidas<br><img src="img/partida.png"></center></div>
+                  <div class="col-xl-3 row3perfillol"><center>Vitoria</center></div>
+                  <div class="col-xl-3 row3perfillol"><center>Derrota</center></div>
+              </div>
+          </div>
+          <div class="col-xl-12 ">
+              <div class="row">
+                  <div class="col-xl-12 colunatitulo"><center>Champions</center></div>
+              </div>
+          </div>
+          <div class="col-xl-12 ">
+              <div class="row">
+                  <div class="col-xl-3 row3perfillol champ"><center><?php echo $campeao1;?><br><?php echo "<img src='".$img1."'>";?></center></div>
+                  <div class="col-xl-3 row3perfillol champ"><center><?php echo $campeao2;?><br><?php echo "<img src='".$img2."'>";?></center></div>
+                  <div class="col-xl-3 row3perfillol champ"><center><?php echo $campeao3;?><br><?php echo "<img src='".$img3."'>";?></center></div>
+                  <div class="col-xl-3 row3perfillol champ"><center><?php echo $campeao4;?><br><?php echo "<img src='".$img4."'>";?></center></div>
+              </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </body>
 </html>
