@@ -1,0 +1,192 @@
+body{
+	margin:0;
+	padding:0;
+	background-image:url(img/background.jpg);
+	background-repeat: no-repeat;
+	background-size:cover !important;
+}
+.titulo{
+	color:whitesmoke;
+}
+.col-md-2,.col-md-4,.col-md-6,.col-md-8,.col-md-10,.col-md-12,.col-md-5{
+
+
+}
+/*Corpo do container de login*/
+#containerlogin{
+	font-family: arial;
+	font-size:20px;
+	background-color: rgba(245, 245, 245, 0.9);
+	margin-top:20%;
+	margin-left:23%;
+	border-radius:9px;
+	width:70%;
+}
+input::placeholder {
+  color:#4db6ac;
+}
+/* redimensionamneto da imagem de usuario do login*/
+#containericonlogin img{
+	width: 17%;
+	height: auto;
+}
+/*Redimensionamento das imagens de champ*/
+#imagechamp {
+	width:auto;
+	height:10%;
+}
+
+
+
+/*Tamanho do input de login e padding para o icone*/
+.formulario{
+	width: 95%;
+	padding-left:8% !important;
+	margin-bottom: 25px;
+}
+/*FIM DA PARTE DE FORMULARIOS*/
+/* PAGINA INICIAL CSS */
+/*MENU NAV*/
+.menu-pika{
+	width: 100%;
+	padding-right: 10%;
+	background-color:whitesmoke;
+	color:black;
+	height: 64px;
+	line-height: 64px;
+
+}
+nav{
+	width: 100%;
+	top:0;
+	left:0;
+
+l}
+nav ul{
+	float:right;
+	margin:0;
+	padding:0;
+
+}
+nav ul li{
+	float:left;
+	padding-right: :20px;
+	padding-left:20px;
+	list-style: none;
+
+}
+nav.menupika{
+	position:relative;
+	height: 100%
+}
+nav ul li a{
+
+}
+#logo-menu{
+	padding-left:20% !important;
+	text-decoration:none;
+	color:black;
+	font-size:30px;
+
+}
+.menu-text{
+	text-decoration:none !important;
+	color:inherit;
+	font-size:20px !important;
+}
+
+#iconeuser{
+	border-radius: 200px;
+	height: 10px;
+	width: 2%;
+}
+
+
+/*Imagem dentro do menu dropdown*/
+#containericonmenu img{
+	width: 25%;
+	height: auto;
+}
+/*texto dentro das ul do menu principal*/
+#containertextuser{
+	padding-top:20% !important;
+	line-height: normal;
+	padding-right:12%;
+}
+/*controla as linhas dentro do menu do usuario dropdown*/
+.line-size{
+	line-height: normal !important;
+	height: 30px !important;
+	text-align:right;
+	padding-right:20px;
+	padding-top:20px;
+
+
+#box-menu-jogo{
+	height:40px;
+	background-color: whitesmoke;
+	width: 30%;
+	text-align: center;
+	margin-left:35%;
+	margin-top:1%;
+	margin-bottom: 1%;
+	font-family: fantasy;
+	font-size: 28px;
+	border-top: solid;
+	border-radius: 10px;
+}
+
+#box-menu-campeoes{
+	height:40px;
+	width: 30%;
+	text-align: center;
+	margin-left:35%;
+	margin-top:1%;
+	margin-bottom: 1%;
+	font-size: 28px;
+	border-top: solid;
+	border-radius: 10px;
+}
+
+#camp{width:30%;
+margin-left:-20px; }
+
+#camp1{width:60%;
+margin-left:-20px; }
+
+.img-menu-position{
+	width:50% !important;
+	height: 500px;
+
+}
+.container-image-menu{
+		margin-left:50%;
+}
+.page-footer{
+	background-color:#f0f0f0 !important;
+}
+.footer-copyright{
+	background-color:#3c3c3c !important;
+}
+.icon{
+	color:black !important;
+	font-size:20px;
+}
+/*FIM DA PAGINA INICIAL */
+
+/*container do cadastro de perfil*/
+#containerlogin1{
+	font-family: arial;
+	font-size:20px;
+	background-color: rgba(245, 245, 245, 0.9);
+	margin-top:20%;
+	margin-left:50%;
+	border-radius:9px;
+}
+/* estilização da tabela*/
+#alter tr td{
+	background: #fff;
+}
+#alter tr.dif td {
+	background: #90BF60;
+	}
