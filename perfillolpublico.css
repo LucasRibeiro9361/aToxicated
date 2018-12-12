@@ -161,3 +161,36 @@ font-family: montserrat;
     background-color:#143642 ;
     color: whitesmoke;
 }
+.containerconvitebaixo{
+    background:#dedede;
+    border:1px solid black;
+    
+}
+.containeravaliar{
+  background:#dedede;
+  border:1px solid black;
+}
+.tituloavaliar{
+  font-size:25px;
+  font-family: montserrat;
+  text-align:center;
+}
+.div-select {
+    width:220px;  /* Tamanho final do select */
+    overflow:hidden; /* Esconde o conteúdo que passar do tamanho especificado */
+}
+
+.div-select select {
+      background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-select.gif) no-repeat #354880;  /* Imagem de fundo (Seta) */
+      background-position: 175px center;  /*Posição da imagem do background*/
+      width: 240px; /* Tamanho do select, maior que o tamanho da div "div-select" */
+      height:48px; /* altura do select, importante para que tenha a mesma altura em todo os navegadores */
+      font-family:Arial, Helvetica, sans-serif; /* Fonte do Select */
+      font-size:18px; /* Tamanho da Fonte */
+      padding:13px 20px 13px 12px; /* Configurações de padding para posicionar o texto no campo */
+      color:#fff; /* Cor da Fonte */
+      text-indent: 0.01px; /* Remove seta padrão do FireFox */
+      text-overflow: "";  /* Remove seta padrão do FireFox */
+
+
+}

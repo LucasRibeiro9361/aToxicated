@@ -13,7 +13,7 @@ else{
 <meta charset="utf-8">
   <head>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="perfillolparticular.css">
+    <link rel="stylesheet" type="text/css" href="perfillolpublico.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap-grid.min.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 		<script src="js/bootstrap.min.js"></script>
@@ -120,63 +120,6 @@ else{
 		}
 //fim//
   	?>
-	<?php
-	//Avaliação
-	echo "Avaliação(como foi sua experiencia com esse jogador)?
-				<form method='POST'>
-				<textarea name='comentario' rows='10' cols='40'></textarea><br>
-				<input type='submit' name='botao' value='Boa'><input type='submit' name='botao' value='Ruim'></form>";
-				if (isset($_POST['botao'])) {
-					$comentario=$_POST['comentario'];
-					$sql = "SELECT * FROM tb_perfillol WHERE id_usuario='$id'";
-					$result = $conn->query($sql);
-					if ($result->num_rows > 0) {
-							while($row = $result->fetch_assoc()) {
-								$id1=$row['cd_perfillol'];
-							}
-						}
-					if($_POST['botao']=="Boa"){
-						$sql = "SELECT * FROM tb_avaliacao WHERE id_usuario1=$id1 AND id_usuario2=$cdperfil";
-	          $result = $conn->query($sql);
-	          if ($result->num_rows > 0) {
-	              while($row = $result->fetch_assoc()) {
-									echo "Você já avaliou esse jogador";
-	              }
-	          }else{
-							$sql = "INSERT INTO tb_avaliacao VALUES(null,'$comentario','$id1',$cdperfil)";
-							$sql = "UPDATE tb_perfillol SET reputacao=reputacao+10 WHERE cd_perfil=$id1";
-							if ($conn->query($sql) === TRUE) {
-							    echo "Record updated successfully";
-							} else {
-							    echo "Error updating record: " . $conn->error;
-							}
-	          }
-					}
-					if ($_POST['botao']=="Ruim") {
-						$sql = "SELECT * FROM tb_avaliacao WHERE id_usuario1=$id1 AND id_usuario2=$cdperfil";
-						$result = $conn->query($sql);
-						if ($result->num_rows > 0) {
-								while($row = $result->fetch_assoc()) {
-									echo "Você já avaliou esse jogador";
-								}
-						}else{
-							$sql = "INSERT INTO tb_avaliacao VALUES(null,'$comentario','$id1',$cdperfil)";
-							if ($conn->query($sql) === TRUE) {
-							    echo "New record created successfully";
-							} else {
-							    echo "Error: " . $sql . "<br>" . $conn->error;
-							}
-							$sql = "UPDATE tb_perfillol SET reputacao=reputacao-10 WHERE cd_perfillol=$id1";
-							if ($conn->query($sql) === TRUE) {
-									echo "Record updated successfully";
-							} else {
-									echo "Error updating record: " . $conn->error;
-							}
-						}
-					}
-				}
-//fim
-?>
 <div class="container-fluid">
   <div class="row">
     <div class="col-xl-2 containerperfilgeral">
@@ -240,7 +183,30 @@ else{
           </div>
           <div class="row">
              <div class="col-xl-12 editarperfil">
-               <center><a href="editarperfillol.php"><button class="botao1 botao">editar perfil</button></a></center>
+               <?php
+               //amizade
+               		echo "<form method='post'>
+               			<input class='botao1 botao' type='SUBMIT' name='botao1' value='Amizade'>
+               		</form>";
+               		if (isset($_POST['botao1'])) {
+               				$sql = "SELECT * FROM tb_amigos WHERE id_usuario1='$id' and id_usuario2=$idusuario";
+               				$result = $conn->query($sql);
+               				if ($result->num_rows > 0) {
+               						while($row = $result->fetch_assoc()) {
+               						echo "<script language='javascript' type='text/javascript'>alert('Voce ja enviou um pedido ');</script>";
+               						}
+               					}else{
+               			$sql="INSERT INTO tb_amigos VALUES(null,$id,$idusuario,0)";
+               			if ($conn->query($sql) === TRUE) {
+                   echo "New record created successfully";
+               } else {
+                   echo "Error: " . $sql . "<br>" . $conn->error;
+               }
+
+               		}
+               	}
+               //fim
+               ?>
              </div>
           </div>
        </div>
@@ -298,9 +264,78 @@ $_SESSION['losses']; echo $total;?><img src="img/partida.png"></center></div>
     </div>
   </div>
 </div>
+
+<div class="container-fluid">
+    <div class="row">
+    <div style="margin-left:15%;margin-top:1%;"class="col-xl-12 containerdebaixo">
+      <div class="row">
+        <div class="col-xl-4 containeravaliar">
+
+<?php
+//Avaliação
+echo "<center> <div class='tituloavaliar'>Avalie sua experiencia com esse jogador</div>
+      <form method='POST'>
+      <textarea name='comentario' rows='10' cols='40'></textarea><br>
+      <input class='botao1 botao' type='submit' name='botao' value='Boa'><input class='botao1 botao' type='submit' name='botao' value='Ruim'></form> </center>";
+      if (isset($_POST['botao'])) {
+        $comentario=$_POST['comentario'];
+        $sql = "SELECT * FROM tb_perfillol WHERE id_usuario='$id'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+              $id1=$row['cd_perfillol'];
+            }
+          }
+        if($_POST['botao']=="Boa"){
+          $sql = "SELECT * FROM tb_avaliacao WHERE id_usuario1=$id1 AND id_usuario2=$cdperfil";
+          $result = $conn->query($sql);
+          if ($result->num_rows > 0) {
+              while($row = $result->fetch_assoc()) {
+                echo "Você já avaliou esse jogador";
+              }
+          }else{
+            $sql = "INSERT INTO tb_avaliacao VALUES(null,'$comentario','$id1',$cdperfil)";
+            $sql = "UPDATE tb_perfillol SET reputacao=reputacao+10 WHERE cd_perfil=$id1";
+            if ($conn->query($sql) === TRUE) {
+                echo "Record updated successfully";
+            } else {
+                echo "Error updating record: " . $conn->error;
+            }
+          }
+        }
+        if ($_POST['botao']=="Ruim") {
+          $sql = "SELECT * FROM tb_avaliacao WHERE id_usuario1=$id1 AND id_usuario2=$cdperfil";
+          $result = $conn->query($sql);
+          if ($result->num_rows > 0) {
+              while($row = $result->fetch_assoc()) {
+                echo "Você já avaliou esse jogador";
+              }
+          }else{
+            $sql = "INSERT INTO tb_avaliacao VALUES(null,'$comentario','$id1',$cdperfil)";
+            if ($conn->query($sql) === TRUE) {
+                echo "New record created successfully";
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+            $sql = "UPDATE tb_perfillol SET reputacao=reputacao-10 WHERE cd_perfillol=$id1";
+            if ($conn->query($sql) === TRUE) {
+                echo "Record updated successfully";
+            } else {
+                echo "Error updating record: " . $conn->error;
+            }
+          }
+        }
+      }
+//fim
+?>
+</div>
+<div class="col-xl-4 containerconvitebaixo">
 <?php
 //convite
-echo "<form method='post'>
+echo "
+<center><div class='tituloavaliar'>Convidar Jogador</div>
+<form method='post'>
+  <div class='div-select'>
 	<select name='lane'>
 		<option value='1'>Topo</option>
 		<option value='2'>Selva</option>
@@ -308,9 +343,10 @@ echo "<form method='post'>
 		<option value='4'>Atirador</option>
 		<option value='5'>Suporte</option>
 	</select>
-	<textarea name='mensagem' rows='4' cols='25'></textarea>
-	<input type='SUBMIT' name='botao2' value='Enviar convite para equipe'>
-</form>";
+  </div>
+	<textarea name='mensagem' rows='4' cols='25'></textarea><br>
+	<input class='botao botao1' type='SUBMIT' name='botao2' value='Enviar pedido'>
+</form></center>";
 	if (isset($_POST['botao2'])) {
 	$mensagem=$_POST['mensagem'];
 	$lane=$_POST['lane'];
@@ -345,31 +381,11 @@ echo "<form method='post'>
 	}else{
 		echo "<center>Nenhum jogador encontrado com esse nome.<br><a href='filtrodejogadoreslol.php'><input type='submit' value='VOLTAR'></a></center>";
 	}
-?>
-<?php
-//amizade
-		echo "<form method='post'>
-			<input type='SUBMIT' name='botao1' value='Enviar solicitação de amizade'>
-		</form>";
-		if (isset($_POST['botao1'])) {
-				$sql = "SELECT * FROM tb_amigos WHERE id_usuario1='$id' and id_usuario2=$idusuario";
-				$result = $conn->query($sql);
-				if ($result->num_rows > 0) {
-						while($row = $result->fetch_assoc()) {
-						echo "Você ja enviou uma solicitacao de amizade para esse usuario";
-						}
-					}else{
-			$sql="INSERT INTO tb_amigos VALUES(null,$id,$idusuario,0)";
-			if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-		}
-	}
-//fim
-?>
+?>      </div>
+      </div>
+    </div>
+  </div>
+</div>
   </body>
   <br><footer>
   	<?php include 'footer.php';?>
