@@ -20,7 +20,7 @@ body{background-image: url(img/background.jpg);}
 </head>
 <body>
 	<form action="loginok.php" method="post">
-        <img id="logologinpage" src="img/Logo1.png">
+        <img id="logologinpage" src="images/logowhite.png">
     <div class="container-fluid ">
         <div class="row ">
             <div class="col-md-4 offset-md-8 containerlogin">

@@ -1,0 +1,87 @@
+body{
+    margin:0;
+    padding:0;
+}
+.containerlogin{
+    background-color:rgba(41,47,54,0.8);
+    border:none;
+    border-left: solid;
+    border-width: thin;
+    border-color: rgba(245, 245, 245, 0.3);
+    height: 100vh;
+}
+.containerlogin2{
+    height: 20%;
+    font-size:24px;
+    text-align: left;
+    font-family:montserrat;
+    color:whitesmoke
+}
+.input[type=text],input[type=password]{
+    color:whitesmoke !important;
+    background-color: transparent;
+    border:none;
+    border-bottom: solid;
+    border-color: whitesmoke;
+    border-width: thin;
+    padding-left:8%;
+    font-size:20px;
+    height: auto;
+    width:120%;
+    padding-top:5%;
+
+}
+input::placeholder{
+    color: whitesmoke;
+    opacity: 1;
+}
+
+input:focus{
+    outline:none;
+}
+.titulocontainer{
+    margin-top: 10%;
+    font-size:30px;
+    padding-bottom: 5%
+
+}
+.botao{
+
+    border: none;
+    color: #4CAF50;
+    padding: 8px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-top:3%;
+    border-radius:5px;
+}
+.botao1{
+    background-color: whitesmoke;
+    color: #143642;
+    border: 2px solid #555555;
+}
+
+.botao1:hover {
+    background-color:#143642 ;
+    color: whitesmoke;
+}
+.loginform{
+	position:absolute;
+	margin-left:1%;
+	margin-top:3%;
+	width: 2%;
+	height:4%;
+}
+#logologinpage{
+    position:absolute;
+    width: 20%;
+    margin-top:1%;
+    margin-left:1%;
+    height: auto;
+}
