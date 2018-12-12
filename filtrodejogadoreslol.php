@@ -14,8 +14,13 @@ else{
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="filtrodejogadoreslol.css">
 		<link rel="stylesheet" href="css/bootstrap/bootstrap-grid.min.css">
-
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style>
+		body{
+		background-image:url(images/bg3.jpg);
+		background-repeat: no-repeat;
+		background-size:cover !important;}
+		</style>
     <title>Filtro de jogadores</title>
   </head>
   <body>

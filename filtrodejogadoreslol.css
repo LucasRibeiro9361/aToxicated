@@ -58,11 +58,11 @@ body{
    max-width:75%;
 }
 .conteudofiltro {
-
+background-color: whitesmoke;
 
 }
 .div-select {
-    width:220px;  /* Tamanho final do select */
+    width:80%;  /* Tamanho final do select */
     overflow:hidden; /* Esconde o conteúdo que passar do tamanho especificado */
 }
 
@@ -77,8 +77,6 @@ body{
       color:#fff; /* Cor da Fonte */
       text-indent: 0.01px; /* Remove seta padrão do FireFox */
       text-overflow: "";  /* Remove seta padrão do FireFox */
-
-
 }
 .botao{
 

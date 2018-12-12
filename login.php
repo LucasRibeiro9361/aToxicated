@@ -15,12 +15,12 @@ header('Location: playerhome.php');
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <meta charset="utf-8">
 <style>
-body{background-image: url(img/background.jpg);}
+body{background-image: url(images/bg1.jpg);}
 </style>
 </head>
 <body>
 	<form action="loginok.php" method="post">
-        <img id="logologinpage" src="images/logowhite.png">
+        <img style="margin-top:45%;;" id="logologinpage" src="images/logowhite.png">
     <div class="container-fluid ">
         <div class="row ">
             <div class="col-md-4 offset-md-8 containerlogin">

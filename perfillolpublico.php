@@ -240,7 +240,7 @@ else{
           </div>
           <div class="row">
              <div class="col-xl-12 editarperfil">
-               <center><a href="#"><button class="botao1 botao">editar perfil</button></a></center>
+               <center><a href="editarperfillol.php"><button class="botao1 botao">editar perfil</button></a></center>
              </div>
           </div>
        </div>
