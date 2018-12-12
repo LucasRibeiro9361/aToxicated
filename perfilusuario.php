@@ -105,7 +105,7 @@ else{
               </div>
               <div class="row">
                  <div class="col-xl-12 editarperfil">
-                   <center><a href="#"><button class="botao1 botao">editar perfil</button></a></center>
+                   <center><a href="editarperfil.php"><button class="botao1 botao">editar perfil</button></a></center>
                  </div>
               </div>
            </div>
@@ -120,22 +120,23 @@ else{
                         <div class="col-xl-12 convitetitulo">
                         Convite Equipes
                       </div>
-                      <?php include 'conviteusuario.php'; ?>
                     </div>
                     <div class="row">
                         <div class="col-xl-12 containerconvite ">
+                          <?php include 'conviteusuario.php'; ?>
                         </div>
                     </div>
                   </div>
                   <div class="col-xl-6 convitetime">
                     <div class="row">
-                      <div class="col-xl-12 convitetitulo">
+                      <div class="col-xl-12 convitetitulo convitetitulo2">
                         Convite Jogadores
                       </div>
-                      <?php include 'amigos.php'; ?>
+
                     </div>
                     <div class="row">
                         <div class="col-xl-12 containerconvitetime">
+                          <?php include 'amigos.php'; ?>
                         </div>
                     </div>
                   </div>
