@@ -152,7 +152,7 @@
     			</table>
     			<p>
     				<h1>Pesquisar pelo Nick</h1>
-    			<form method="post" action="perfilequipelolpublica.php">
+    			<form method="post" action="codigo.php">
     				nome da equipe<input type="text" name="nome" placeholder="nickname">
     				<input type="submit" value="submit">
       </body>
