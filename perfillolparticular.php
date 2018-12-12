@@ -161,7 +161,13 @@ if ($result->num_rows > 0) {
             $lane2 = $row['lane'];
         }
     }
-
+    $sql = "SELECT * FROM tb_equipelol WHERE cd_equipelol='$equipe'";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+          $equipe=$row['nome'];
+        }
+      }
     ?>
 
 <div class="container-fluid geral">
