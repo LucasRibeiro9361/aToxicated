@@ -42,8 +42,11 @@
           <div id="chatbox">
 
       <?php
-      if(isset($_POST['botaoo'])){
-        $_SESSION['amigo'] = null;
+      if(isset($_POST['botaoo'])){$_SESSION['amigo'] = null;?>
+        <script>
+        window.location = "<?php echo basename($_SERVER['PHP_SELF']); ?>";
+        </script>
+        <?php
       }
       $link = "../aToxicated/chat/log".$amizade.".html";
 if(file_exists($link) && filesize($link) > 0){
@@ -54,7 +57,7 @@ if(file_exists($link) && filesize($link) > 0){
 }
 ?>
 </div>
-    <form name="message">
+    <form name="message" action="">
         <input name="usermsg" type="text" id="usermsg" size="63"/>
         <input name="submitmsg" type="submit" id="submitmsg" value="Enviar"/>
     </form>
@@ -102,7 +105,6 @@ if(file_exists($link) && filesize($link) > 0){
       </tr>
     </center>
     <?php
-    include 'connect.php';
     $id = $_SESSION["cdusuario"];
     $sql = "SELECT IF(id_usuario1=$id,id_usuario2,id_usuario1) AS usuario, Plol.nick as lol, Pcs.nick as cs, U.usuario as nome
 FROM tb_amigos AS A
@@ -119,7 +121,7 @@ WHERE ((id_usuario1 = $id AND id_usuario2 <> $id) OR (id_usuario1 <> $id AND id_
                   echo "<th>".$row['nome']."</th>";
                   echo "<th>".$row['cs']."</th>";
                   echo "<th>".$row['lol']."</th>";
-                  echo "<th><form method='POST'><input type='hidden' value='".$row['usuario']."' name='cd1'><input type='submit' name='botao' value='abrir conversa'></form></th></tr>";
+                  echo "<th><form method='POST' action=''><input type='hidden' value='".$row['usuario']."' name='cd1'><input type='submit' name='botao' value='abrir conversa'></form></th></tr>";
                 }
             } else {
                 echo "Sem amigos";
@@ -127,7 +129,10 @@ WHERE ((id_usuario1 = $id AND id_usuario2 <> $id) OR (id_usuario1 <> $id AND id_
             if (isset($_POST['botao'])) {
               $amigo= $_POST['cd1'];
               $_SESSION['amigo'] = $amigo;
-            }
-    ?>
-</table>
+              ?>
+              <script>
+              window.location = "<?php echo basename($_SERVER['PHP_SELF']); ?>";
+              </script>
+    <?php }?>
+  </table>
 <?php } ?>

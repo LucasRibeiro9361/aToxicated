@@ -60,10 +60,10 @@ text-decoration:none !important;
 	?>
 	</button>
   	<div style="margin-left: 45%;width:50%;text-align:right;color:#262626;background-color:#FFFFFF;border-color:#0B5D1E;"class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-		<button class="dropdown-item" href="perfilusuario.php">Seu perfil</button>
-		<button class="dropdown-item" href="perfilequipelolparticular.php">Seu time</button>
-		<button class="dropdown-item" href="Denuncia.php">Denuncia</button>
-		<button class="dropdown-item" href="Logout.php">Logout</button>
+		<a class="dropdown-item" href="perfilusuario.php">Seu perfil</a>
+		<a class="dropdown-item" href="perfilequipelolparticular.php">Seu time</a>
+		<a class="dropdown-item" href="Denuncia.php">Denuncia</a>
+		<a class="dropdown-item" href="Logout.php">Logout</a>
 	</div>
 </div>
 						</ul>
