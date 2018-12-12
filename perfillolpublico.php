@@ -25,6 +25,7 @@ else{
   </head>
 <body>
     <?php
+    $id=$_SESSION["cdusuario"];
 		$nick1=$_SESSION['nickbusca'];
     if(isset($nick1) && $nick1 ==! ""){
     $sql = "SELECT P.cd_perfillol, P.nick, P.objetivo, P.estado, C1.campeoes AS campeao1, C1.img AS img1, C2.campeoes AS campeao2, C2.img AS img2,
@@ -127,19 +128,19 @@ else{
 					$result = $conn->query($sql);
 					if ($result->num_rows > 0) {
 							while($row = $result->fetch_assoc()) {
-								$id=$row['cd_perfillol'];
+								$id1=$row['cd_perfillol'];
 							}
 						}
 					if($_POST['botao']=="Boa"){
-						$sql = "SELECT * FROM tb_avaliacao WHERE id_usuario1=$id AND id_usuario2=$cdperfil";
+						$sql = "SELECT * FROM tb_avaliacao WHERE id_usuario1=$id1 AND id_usuario2=$cdperfil";
 	          $result = $conn->query($sql);
 	          if ($result->num_rows > 0) {
 	              while($row = $result->fetch_assoc()) {
 									echo "Você já avaliou esse jogador";
 	              }
 	          }else{
-							$sql = "INSERT INTO tb_avaliacao VALUES(null,'$comentario','$id',$cd_perfil)";
-							$sql = "UPDATE tb_perfillol SET reputacao=reputacao+10 WHERE cd_perfil=$cd_perfil";
+							$sql = "INSERT INTO tb_avaliacao VALUES(null,'$comentario','$id1',$cdperfil)";
+							$sql = "UPDATE tb_perfillol SET reputacao=reputacao+10 WHERE cd_perfil=$id1";
 							if ($conn->query($sql) === TRUE) {
 							    echo "Record updated successfully";
 							} else {
@@ -148,20 +149,20 @@ else{
 	          }
 					}
 					if ($_POST['botao']=="Ruim") {
-						$sql = "SELECT * FROM tb_avaliacao WHERE id_usuario1=$id AND id_usuario2=$cdperfil";
+						$sql = "SELECT * FROM tb_avaliacao WHERE id_usuario1=$id1 AND id_usuario2=$cdperfil";
 						$result = $conn->query($sql);
 						if ($result->num_rows > 0) {
 								while($row = $result->fetch_assoc()) {
 									echo "Você já avaliou esse jogador";
 								}
 						}else{
-							$sql = "INSERT INTO tb_avaliacao VALUES(null,'$comentario','$id',$cdperfil)";
+							$sql = "INSERT INTO tb_avaliacao VALUES(null,'$comentario','$id1',$cdperfil)";
 							if ($conn->query($sql) === TRUE) {
 							    echo "New record created successfully";
 							} else {
 							    echo "Error: " . $sql . "<br>" . $conn->error;
 							}
-							$sql = "UPDATE tb_perfillol SET reputacao=reputacao-10 WHERE cd_perfillol=$cdperfil";
+							$sql = "UPDATE tb_perfillol SET reputacao=reputacao-10 WHERE cd_perfillol=$id1";
 							if ($conn->query($sql) === TRUE) {
 									echo "Record updated successfully";
 							} else {
@@ -308,7 +309,6 @@ echo "<form method='post'>
 	<textarea name='mensagem' rows='4' cols='25'></textarea>
 	<input type='SUBMIT' name='botao2' value='Enviar convite para equipe'>
 </form>";
-	$id=$_SESSION["cdusuario"];
 	if (isset($_POST['botao2'])) {
 	$mensagem=$_POST['mensagem'];
 	$lane=$_POST['lane'];
