@@ -9,7 +9,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/scripts.js"></script>
     <meta charset="utf-8">
-    <title></title>
+    <title>Filtrar Equipes</title>
   </head>
   <body>
     <?php
@@ -21,9 +21,6 @@
     	header('Location: login.php');
     }
     ?>
-    <!DOCTYPE html>
-    <html lang="en" dir="ltr">
-      <head>
         <meta charset="utf-8">
         <title></title>
       </head>
