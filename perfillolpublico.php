@@ -30,8 +30,10 @@ else{
     if(isset($nick1) && $nick1 ==! ""){
     $sql = "SELECT P.cd_perfillol, P.nick, P.objetivo, P.estado, C1.campeoes AS campeao1, C1.img AS img1, C2.campeoes AS campeao2, C2.img AS img2,
 		 C3.campeoes AS campeao3, C3.img AS img3, C4.campeoes AS campeao4, C4.img AS img4, C5.campeoes AS campeao5, C5.img AS img5, E.elo AS elo,
-		 L1.lane AS lane1, P.id_usuario, Eq.nome AS equipe, P.reputacao, P.levellol, P.imgperfil,L2.lane AS lane2
+		 L1.lane AS lane1, P.id_usuario, Eq.nome AS equipe, P.reputacao, P.levellol, P.imgperfil, U1.nick AS usuario, L2.lane AS lane2
 		FROM tb_perfillol AS P
+		INNER JOIN tb_usuario AS U1
+		ON P.id_usuario = U1.cd_usuario
 		LEFT JOIN tb_campeoes AS C1
 		ON P.campeao1 = C1.cd_campeoes
 		LEFT JOIN tb_campeoes AS C2
@@ -49,11 +51,13 @@ else{
 		LEFT JOIN tb_lanelol AS L2
 		ON P.id_lane2lol = L2.cd_lanelol
 		LEFT JOIN tb_equipelol AS EQ
-		ON P.id_equipelol = EQ.cd_equipelol WHERE nick ='$nick1'";
+		ON P.id_equipelol = EQ.cd_equipelol
+    WHERE P.nick ='$nick1'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
 					$nickshow = $row['nick'];
+          $usuario = $row['usuario'];
 					$imgperfil = $row['imgperfil'];
 					$objetivo = $row['objetivo'];
 					$estado = $row['estado'];
@@ -206,7 +210,7 @@ else{
           </div>
           <div class="row">
              <div class="col-xl-12 nomeperfilgeral">
-               <center><?php echo $nickshow;?></center>
+               <center><?php echo $usuario;?></center>
              </div>
           </div>
           <div class="row">

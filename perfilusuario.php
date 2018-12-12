@@ -168,18 +168,8 @@ else{
         $cdamigos=$_POST['cdamigos'];
         if ($_POST['botao2']=="Aceitar") {
           $sql = "UPDATE tb_amigos SET status=1 WHERE cd_amigos=$cdamigos";
-          if ($conn->query($sql) === TRUE) {
-              echo "Record updated successfully";
-          } else {
-              echo "Error updating record: " . $conn->error;
-          }
         }else{
           $sql = "UPDATE tb_amigos SET status=2 WHERE cd_amigos=$cdamigos";
-          if ($conn->query($sql) === TRUE) {
-              echo "Record updated successfully";
-          } else {
-              echo "Error updating record: " . $conn->error;
-        }
       }
     }
   ?>
