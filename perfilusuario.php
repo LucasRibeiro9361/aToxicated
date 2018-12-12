@@ -21,7 +21,7 @@ else{
 
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="perfillolparticular.css">
+    <link rel="stylesheet" type="text/css" href="perfilusuario.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap-grid.min.css">
   	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script src="js/bootstrap.min.js"></script>
@@ -115,47 +115,28 @@ else{
         <div class="col-xl-6 containerperfillol">
           <div class="col-xl-12">
               <div class="row">
-                  <div class="col-xl-12 colunatitulo"><center>Funcao e ELO</center></div>
+                  <div class="col-xl-6 convite">
+                      <div class="row">
+                      <div class="col-xl-12 convitetitulo">
+                        Convite Equipes
+                      </div>
+                      </div>
+                  </div>
+                  <div class="col-xl-6 convitetime">
+                    <div class="row">
+                    <div class="col-xl-12 convitetitulo">
+                      Convite Jogadores
+                    </div>
+                    </div>
+                  </div>
               </div>
           </div>
           <div class="col-xl-12">
               <div class="row">
-                  <div class="col-xl-3 row1perfillol nivelimg"><center>Nivel<br><br><?php echo $level;?></center></div>
-                  <div class="col-xl-3 row1perfillol"><center>Elo<br><br><?php echo $elo;?></center></div>
-                  <div class="col-xl-3 row1perfillol rota"><center>Role principal<br><?php echo "<img src='".$lane1."'>";?></center></div>
-                  <div class="col-xl-3 row1perfillol rota"><center>Role secundaria<br><?php echo "<img src='".$lane2."'>";?></center></div>
-              </div>
-          </div>
-          <div class="col-xl-12">
-              <div class="row">
-                  <div class="col-xl-12 row1perfillol">Time do jogador:<br><?php echo $equipe;?></div>
-
-              </div>
-          </div>
-          <div class="col-xl-12 ">
-              <div class="row">
-                  <div class="col-xl-12 colunatitulo"><center>Estatisticas</center></div>
-              </div>
-          </div>
-          <div class="col-xl-12">
-              <div class="row">
-                  <div class="col-xl-3 row3perfillol winrate"><center>Winrate<br><img src="img/winrate.png"></center></div>
-                  <div class="col-xl-3 row3perfillol partida"><center>Partidas<br><img src="img/partida.png"></center></div>
-                  <div class="col-xl-3 row3perfillol"><center>Vitoria</center></div>
-                  <div class="col-xl-3 row3perfillol"><center>Derrota</center></div>
-              </div>
-          </div>
-          <div class="col-xl-12 ">
-              <div class="row">
-                  <div class="col-xl-12 colunatitulo"><center>Champions</center></div>
-              </div>
-          </div>
-          <div class="col-xl-12 ">
-              <div class="row">
-                  <div class="col-xl-3 row3perfillol champ"><center><?php echo $campeao1;?><br><?php echo "<img src='".$img1."'>";?></center></div>
-                  <div class="col-xl-3 row3perfillol champ"><center><?php echo $campeao2;?><br><?php echo "<img src='".$img2."'>";?></center></div>
-                  <div class="col-xl-3 row3perfillol champ"><center><?php echo $campeao3;?><br><?php echo "<img src='".$img3."'>";?></center></div>
-                  <div class="col-xl-3 row3perfillol champ"><center><?php echo $campeao4;?><br><?php echo "<img src='".$img4."'>";?></center></div>
+                  <div class="col-xl-9 chati">
+                  </div>
+                    <div class="col-xl-3 chatiamigos">
+                  </div>
               </div>
           </div>
 
