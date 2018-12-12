@@ -25,6 +25,7 @@ else{
 					<div class=" col-xl-2 containerfiltro">
 						<div class="row">
 							<div class="col-xl-12 titulo">
+								Filtros
 						</div>
 					</div>
 					<center>
