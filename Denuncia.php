@@ -1,69 +1,80 @@
 <?php
 include 'config.php';
 include 'connect.php';
-include 'selectdedadosperfilparticular.php';
-include 'conviteperfil.php';
 if(isset($_SESSION["cdusuario"])){
   include 'menulogado.php';
 }
 else{
   header('Location: login.php');
 }
-error_reporting(0);
-ini_set(“display_errors”, 0 );
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="perfillolparticular.css">
-    <link rel="stylesheet" type="text/css" href="perfilusuario.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap-grid.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title></title>
+    <title>Denuncia</title>
+    <style>
+    body{
+    background-image:url(img/bg-masthead.jpg);
+    background-repeat: no-repeat;
+    background-size:cover !important;}
+    </style>
   </head>
   <body>
-    <br>
-    <br>
-    <center>
-      <div class="container-fluid" id="cont1">
-        <div class="row">
-          <div class="col-lg-6">
-    <form method="POST">
-      <input type="text" name="nick" placeholder="Digite o nick do denunciado"><br>
+    <br><br><br><br><br><br>
+        <link rel="stylesheet" type="text/css" href="Denuncia.css">
+        <form method="POST">
+    <div class="background">
+  <div class="container">
+    <div class="screen">
+      <div class="screen-header">
+        <div class="screen-header-left">
+          <div class="screen-header-button close"></div>
+          <div class="screen-header-button maximize"></div>
+          <div class="screen-header-button minimize"></div>
+        </div>
+        <div class="screen-header-right">
+          <div class="screen-header-ellipsis"></div>
+          <div class="screen-header-ellipsis"></div>
+          <div class="screen-header-ellipsis"></div>
+        </div>
+      </div>
+      <div class="screen-body">
+        <div class="screen-body-item left">
+          <div class="app-title">
+            <span>CONTACT</span>
+            <span>US</span>
+          </div>
+          <div class="app-contact">CONTACT INFO : +62 81 314 928 595</div>
+        </div>
+        <div class="screen-body-item">
+          <div class="app-form">
+            <div class="app-form-group">
+              <input class="app-form-control" name="nick" placeholder="Digite o nick do denunciado">
+            </div>
+            <div class="app-form-group">
+                    <select name="jogo">Selecione o jogo
+                      <option value="1">LOL</option>
+                    </select>
+            </div>
+            <div class="app-form-group message">
+              <input class="app-form-control" placeholder="Motivo da denuncia">
+            </div>
+            <div class="app-form-group buttons">
+              <button class="app-form-button">CANCELAR</button>
+              <button class="app-form-button">ENVIAR</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <br>
-    <div class="row">
-      <div class="col-lg-6">
-      <select name="jogo">
-        <option value="1">LOL</option>
-      </select><br>
-    </div></div>
-      <br>
-    <div class="row">
-      <div class="col-lg-6">
-      <textarea name="motivo" rows="2" cols="25"></textarea><br>
-    </div>
-  </div>
-    <br>
-  <div class="row">
-    <div class="col-lg-6">
-      <textarea name="complemento" rows="5" cols="40"></textarea><br>
-    </div>
-  </div>
-    <br>
-  <div class="row">
-    <div class="col-lg-6">
-      <input type="submit" name="botao" value="ENVIAR">
-    </div>
-  </div>
-    </form>
-  </center>
+</div></link></form>
     <?php
-      include 'config.php';
       include 'connect.php';
       if (isset($_POST['botao'])) {
         $nick=$_POST['nick'];
