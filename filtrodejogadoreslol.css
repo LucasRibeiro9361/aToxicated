@@ -59,6 +59,7 @@ body{
 }
 .conteudofiltro {
 background-color: whitesmoke;
+overflow: scroll;
 
 }
 .div-select {

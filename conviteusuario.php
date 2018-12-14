@@ -10,8 +10,8 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     echo "<form method='POST'>
-          a equipe <strong>".$row['nome']."</strong> quer que você se junte a eles atuando na função <strong>".$row['lane']
-            ."</strong><br>mensagem: <strong>".$row['mensagem']."</strong><br>
+          a equipe <strong>".$row['nome']."</strong> quer que você se junte a eles atuando na função <strong class='imgrotaconvite'><img src='".$row['lane']
+            ."'></strong><br>mensagem: <strong>".$row['mensagem']."</strong><br>
             <input type='hidden' name='cdconvite' value='".$row['cd_convite']."'>
             <input type='hidden' name='lane' value='".$row['id_lanelol']."'>
             <input type='hidden' name='cdjogador' value='".$row['id_jogadorlol']."'>

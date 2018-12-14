@@ -12,8 +12,17 @@ else{
 error_reporting(0);
 ini_set(“display_errors”, 0 );
 ?><!DOCTYPE html>
+<center>
 <html lang="en" dir="ltr">
   <head>
+    <!-- Linkagem -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="paginainicial.css">
+		<link rel="stylesheet" href="css/bootstrap/bootstrap-grid.css">
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
     <meta charset="utf-8">
     <title></title>
   </head>
@@ -61,17 +70,55 @@ WHERE nome='$nome'";
       echo "Sem equipe";
     }
     ?>
+    <link rel="stylesheet" type="text/css" href="Denuncia.css">
     <form method="POST">
-      <select name="funcao">
-        <option value="1">Topo</option>
-        <option value="2">Selva</option>
-        <option value="3">Meio</option>
-        <option value="4">Atirador</option>
-        <option value="5">Suporte</option>
-      </select>
-      <textarea name="mensagem" rows="4" cols="25" placeholder="Digite sua mensagem"></textarea><br>
-      <input type="submit" name="botao" value="ENVIAR">
-    <form>
+<div class="background">
+<div class="container">
+<div class="screen">
+  <div class="screen-header">
+    <div class="screen-header-left">
+      <div class="screen-header-button close"></div>
+      <div class="screen-header-button maximize"></div>
+      <div class="screen-header-button minimize"></div>
+    </div>
+    <div class="screen-header-right">
+      <div class="screen-header-ellipsis"></div>
+      <div class="screen-header-ellipsis"></div>
+      <div class="screen-header-ellipsis"></div>
+    </div>
+  </div>
+  <div class="screen-body">
+    <div class="screen-body-item left">
+      <div class="app-title">
+        <span>Envie uma mensagem a equipe</span>
+      </div>
+      <div class="app-contact"></div>
+    </div>
+    <div class="screen-body-item">
+      <div class="app-form">
+        <div class="app-form-group">
+                <select name="jogo">Selecione
+                  <option value="1">Topo</option>
+                  <option value="2">Selva</option>
+                  <option value="3">Meio</option>
+                  <option value="4">Atirador</option>
+                  <option value="5">Suporte</option>
+                </select>
+        </div>
+        <div class="app-form-group message">
+          <input class="app-form-control" placeholder="Digite sua mensagem para a equipe">
+        </div>
+        <div class="app-form-group buttons">
+          <button class="app-form-button">CANCELAR</button>
+          <button class="app-form-button">ENVIAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div></link></form>
+
     <?php
     if(isset($_POST['botao'])){
       $funcao=$_POST['funcao'];
@@ -101,8 +148,17 @@ $result = $conn->query($sql);
     }
   }
     ?>
+    <style>
+    body{
+      background-image: url("img/bg-masthead.jpg");
+      background-repeat: no-repeat;
+      background-size:cover !important;
+    }
+
+    </style>
   </body>
   <br><footer>
   	<?php include 'footer.php';?>
   </footer>
+</center>
 </html>

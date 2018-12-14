@@ -44,8 +44,8 @@
 						</nav>
 						<nav class="main_nav">
 							<ul class="d-flex flex-row align-items-center justify-content-start">
-								<li style="min-width:70%;margin-right:30%;"><a>Procurar Players</a><br><a style="text-align:right;font-size:100%;" href="filtrodejogadoreslol.php">LOL</a> | <a style="text-align:left;font-size:100%;" href="csgo.php">CSGO</a></li>
-								<li style="min-width:70%;"><a>Procurar Times</a><br><a style="text-align:right;font-size:100%;" href="filtroequipeslol.php">LOL</a> | <a style="text-align:left;font-size:100%;" href="csgo.php">CSGO</a></li>
+								<li style="min-width:70%;margin-right:30%;"><a>Procurar Players</a><br><a style="text-align:right;font-size:100%;" href="filtrodejogadoreslol.php">LOL</a> | <a style="text-align:left;font-size:100%;" href="#">CSGO</a></li>
+								<li style="min-width:70%;"><a>Procurar Times</a><br><a style="text-align:right;font-size:100%;" href="filtroequipeslol.php">LOL</a> | <a style="text-align:left;font-size:100%;" href="#">CSGO</a></li>
 							</ul>
 						</nav>
 					<nav class="main_nav">
